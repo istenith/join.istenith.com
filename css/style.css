@@ -1,0 +1,36 @@
+/* title-css */
+* {
+  padding: 0;
+  margin: 0;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  word-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Ubuntu, sans-serif;
+}
+
+.title {
+  text-align: center;
+}
+
+body {
+  min-height: 100%;
+  /* background-color: #ffffff; */
+  background-color: hsla(0, 0%, 0%, 0.8);
+  color: rgba(108, 50, 224, 0.8);
+}
+h1 {
+  letter-spacing: -1px;
+  padding-top: 15px;
+}
+.isteLogo {
+  height: 100px;
+  padding-right: 10px;
+}
+.body-div {
+  margin: 0 200px;
+  border: 10px;
+}
+.footer {
+  background-color: rgba(108, 50, 224, 0.8);
+}
