@@ -13,13 +13,13 @@ For any system:
   python -m pip install Django
 ```
 For ArchLinux:
-```bash
+```console
 sudo pacman -S python-django
 ```
 
 2. Clone the repository:
 
-```bash
+```console
 git clone https://github.com/istenith/join.istenith.com.git
 ```
 
