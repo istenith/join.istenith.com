@@ -25,36 +25,36 @@ git clone https://github.com/istenith/join.istenith.com.git
 
 3. Change the directory to prody-2023 using:
 
-```bash
+```console
 cd join.istenith.com
 ```
 
 4. Create a virtual environment:
 
-```bash
+```console
 pip install virtualenv
 virtualenv venv
 ```
 
 5. Activate the virtual environment
 
-```bash
+```console
 source venv/bin/activate
 ```
 
 6. Now install all the packages which are being used in this project:
 
-```bash
+```console
 pip install -r requirements.txt
 ```
 
 7. Migrate all the database 
-```bash
+```console
 python manage.py migrate
 ```
 
 8. Now run the development server:
 
-```bash
+```console
 python manage.py runserver
 ```
