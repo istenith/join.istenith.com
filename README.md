@@ -9,7 +9,7 @@ This website is using django backend. All you need to do is to go through https:
 1. First of all install Django:
 
 For any system:
-```bash
+```console
   python -m pip install Django
 ```
 For ArchLinux:
