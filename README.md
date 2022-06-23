@@ -1,7 +1,7 @@
 <p align='center'>
 <img width="200" src="static/images/iste.png" alt="ISTE KA LOGO">
 </p>
-<h1 align='center'>PRODYOGIKI'23</h1>
+<h1 align='center'>INTERVIEWS WEBSITE'22</h1>
 This website is using django backend. All you need to do is to go through https://docs.djangoproject.com/ so that you get the basic knowledge that how things are working in django.
 
 ## Steps to follow :pencil2::
