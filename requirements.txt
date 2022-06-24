@@ -4,3 +4,4 @@ django-crispy-forms==1.14.0
 django-jazzmin==2.5.0
 django-widget-tweaks==1.4.12
 sqlparse==0.4.2
+django-import-export==2.8.0
