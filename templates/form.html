@@ -6,7 +6,41 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <style>
+    .btn-file {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-file input[type=file] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      font-size: 100px;
+      text-align: right;
+      filter: alpha(opacity=0);
+      opacity: 0;
+      background: red;
+      cursor: inherit;
+      display: block;
+    }
+
+    .file-input-label {
+      padding: 0px 10px;
+      display: table-cell;
+      vertical-align: middle;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    input[readonly] {
+      background-color: white !important;
+      cursor: text !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,6 +52,7 @@
         <span class="input__label-content">First Name</span>
       </label>
     </span>
+
 
     <span class="input">
       <input type="text" class="input__field" id="input-2" />
@@ -39,7 +74,6 @@
         <span class="input__label-content">Email Address</span>
       </label>
     </span>
-
     <span class="input message">
       <textarea class="input__field" id="input-5"></textarea>
       <label for="input-5" class="input__label">
@@ -64,9 +98,32 @@
 
 
   <!--☝ NOTHING TO BE SEEN HERE ☝-->
-  <div class="footer">This webiste is created by ISTE-NITH for interviews purpose only. Kindly contact is you want to use it.</h5>
+  <div class="footer">This webiste is created by ISTE-NITH for interviews purpose only. Kindly contact is you want to
+    use it.</h5>
   </div>
-    <script src="{% static 'js/index.js' %}"></script> 
+  <script src="{% static 'js/index.js' %}"></script>
+  <script>
+    $(document).on('change', '.btn-file :file', function () {
+      var input = $(this),
+        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+      input.trigger('fileselect', [numFiles, label]);
+    });
+
+    $(document).ready(function () {
+      $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+        console.log("teste");
+        var input_label = $(this).closest('.input-group').find('.file-input-label'),
+          log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+        if (input_label.length) {
+          input_label.text(log);
+        } else {
+          if (log) alert(log);
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'forms',
     'jazzmin',
     'widget_tweaks',
+    'import_export',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
