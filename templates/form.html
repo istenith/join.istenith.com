@@ -40,37 +40,39 @@
     <div>
       <div class="login-box">
         <h2 style="color: rgb(180, 189, 214);">Join ISTE-NITH'22</h2>
-        <form>
-          <div class="user-box">
-            <input type="text" name="" required="">
+        <form method="post" action = "/">
+          {% csrf_token %}
+          {{ form }}
+          {% comment %} <div class="user-box">
+            <input type="text" name="name" required>
             <label>Name</label>
           </div>
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="rollno" required>
             <label>Roll No.</label>
           </div>
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="branch" required>
             <label>Branch</label>
           </div>
           <div class="user-box">
-            <input type="email" name="" required="">
+            <input type="email" name="email" required>
             <label>Email</label>
           </div>
           <div class="user-box">
-            <input type="file" name="" required="">
+            <input type="file" name="file" required>
             <label>Upload your CV</label>
           </div>
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="reason" required>
             <label>Why do you want to join ISTE?</label>
-          </div>
+          </div> {% endcomment %}
           <a href="#">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Submit
+            <input type="submit" value="submit">
           </a>
         </form>
       </div>
