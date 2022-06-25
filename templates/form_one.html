@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join ISTE</title>
+    <link rel="stylesheet" href="/static/css/style_form.css" />
+    <link rel="stylesheet" href="/static/css/responsive.css">
+  </head>
+  <link rel="shortcut icon" href="sources/iste-logo-blue.png" type="image/x-icon">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <link rel="stylesheet" href="css/form-stying.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <script src="https://kit.fontawesome.com/f1236618be.js" crossorigin="anonymous"></script>
+      <!-- ISTE main heading ke link ki coloring -->
+      <style>
+        a:link {
+          color: white;
+        
+          text-decoration: none;
+        }
+        a:hover {
+          color:white;    
+          
+        }
+       
+        </style>
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <img class="isteLogo" src="/static/sources/iste-blue-logo.webp" alt="">
+            
+          <a class="isteHeading" style="color: white; font-size: 30px;"  href="#">INDIAN SOCIETY FOR TECHNICAL EDUCATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="https://www.istenith.com/members" target="_blank">Members</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="https://www.istenith.com/projects" target="_blank">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="https://www.istenith.com/events" target="_blank">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="https://www.istenith.com/about" target="_blank">About</a>
+              </li>
+              
+          </div>
+        </div>
+      </nav>
+      
+      
+
+
+<body>
+  
+    
+    <div class="body-div" >
+
+      <!-- form shuru hua idr  -->
+      
+      <div data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="0">
+        <div class="login-box">
+          <h2 style="color: rgb(4, 68, 250);" >Join ISTE-NITH'22</h2>
+          <form method = "post" action = "/add_user/">
+            {% csrf_token %}
+            <div class="user-box">
+              <input type="text" name="name" required="">
+              <label>Name</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="rollno" required="">
+              <label>Roll No.</label>
+            </div>
+           <div class="user-box">
+              <input type="text" name="branch" required="">
+              <label>Branch</label>
+            </div>
+            <div class="user-box">
+              <input type="email" name="email" required="">
+              <label>Email</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="skills" required="">
+              <label>Your Skills</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="reason" required="">
+              <label>Why do you want to join ISTE?</label>
+            </div>
+            <button type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Submit
+            </a>
+          </form>
+        </div>
+    </div>
+ 
+</div>
+<p style="color:white; padding: 20px 0; margin:10px 0px;">For any query contact us at <a style="color:rgb(4,68,250)"  href="mailto:iste@nith.ac.in">iste@nith.ac.in</a></p>
+
+
+ <div class="social_icons">
+    <a class="social-icon" href="https://www.linkedin.com/company/iste-nith/?viewAsMember=true" target="_blank"><i
+          class="fa fa-linkedin fa-2xl" aria-hidden="true"></i></i></a>
+    <a  class="social-icon" href="https://www.facebook.com/teamistenith" target="_blank"><i class="fa fa-facebook fa-2xl"
+          aria-hidden="true"></i></i></a>
+    <a  class="social-icon" href="https://www.instagram.com/teamistenith/" target="_blank"><i class="fa fa-instagram fa-2xl"
+          aria-hidden="true"></i></a>
+    <a  class="social-icon" href="https://twitter.com/IsteNith" target="_blank"><i class="fa fa-twitter fa-2xl"
+          aria-hidden="true"></i></a>
+
+    </div>
+  </body>
+    <footer class=" navbar-expand-lg  " style="text-align: center;">
+
+<a style="color:rgb(184, 172, 208)">© 2022, &nbsp All rights reserved by ISTE-NITH</a>
+</footer>
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+  <script src="/static/js/app.js"></script>
+</body>
+
+</html>

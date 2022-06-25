@@ -1,0 +1,27 @@
+/* Responsiveness of the site */
+
+@media screen and (max-width: 575px) {
+  form {
+    width: 286px;
+  }
+  .isteLogo {
+    width: 70px;
+    height: auto;
+  }
+  .isteHeading {
+    position: relative;
+    margin-left: 60px;
+  }
+
+  .login-box {
+    width: 286px;
+  }
+  .login-box .user-box input {
+    width: 214px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  form {
+    width: 500px;
+  }
+}
