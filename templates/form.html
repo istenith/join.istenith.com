@@ -1,129 +1,147 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
+{% block section %}
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <img class="isteLogo" src="{% static 'images/iste.png' %}" alt="">
 
-<head>
-  <title></title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-  <style>
-    .btn-file {
-      position: relative;
-      overflow: hidden;
-    }
+      <a class="isteHeading"
+        style="color: white; font-size: 30px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"
+        href="#">INDIAN SOCIETY FOR TECHNICAL EDUCATION</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="https://www.istenith.com/members" target="_blank">Members</a>
+          </li>
 
-    .btn-file input[type=file] {
-      position: absolute;
-      top: 0;
-      right: 0;
-      min-width: 100%;
-      min-height: 100%;
-      font-size: 100px;
-      text-align: right;
-      filter: alpha(opacity=0);
-      opacity: 0;
-      background: red;
-      cursor: inherit;
-      display: block;
-    }
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="https://www.istenith.com/events" target="_blank">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="https://www.istenith.com/about" target="_blank">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#footer" target="_blank">Contact</a>
+          </li>
 
-    .file-input-label {
-      padding: 0px 10px;
-      display: table-cell;
-      vertical-align: middle;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
+      </div>
+    </div>
+  </nav>
 
-    input[readonly] {
-      background-color: white !important;
-      cursor: text !important;
-    }
-  </style>
-</head>
+  <!-- -------------------------- Header End ---------------------------------- -->
+  <div class="body-div">
 
-<body>
-  <div id="container">
+    <!-- form shuru hua idr  -->
 
-    <span class="input">
-      <input type="text" class="input__field" id="input-1" />
-      <label for="input-1" class="input__label">
-        <span class="input__label-content">First Name</span>
-      </label>
-    </span>
-
-
-    <span class="input">
-      <input type="text" class="input__field" id="input-2" />
-      <label for="input-2" class="input__label">
-        <span class="input__label-content">Last Name</span>
-      </label>
-    </span>
-
-    <span class="input">
-      <input type="text" class="input__field" id="input-3" />
-      <label for="input-3" class="input__label">
-        <span class="input__label-content">Phone Number</span>
-      </label>
-    </span>
-
-    <span class="input">
-      <input type="text" class="input__field" id="input-4" />
-      <label for="input-4" class="input__label">
-        <span class="input__label-content">Email Address</span>
-      </label>
-    </span>
-    <span class="input message">
-      <textarea class="input__field" id="input-5"></textarea>
-      <label for="input-5" class="input__label">
-        <span class="input__label-content">Message</span>
-      </label>
-    </span>
-
-    <button id="send-button" type="button">Send</button>
+    <div>
+      <div class="login-box">
+        <h2 style="color: rgb(180, 189, 214);">Join ISTE-NITH'22</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Name</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Roll No.</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Branch</label>
+          </div>
+          <div class="user-box">
+            <input type="email" name="" required="">
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="file" name="" required="">
+            <label>Upload your CV</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Why do you want to join ISTE?</label>
+          </div>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a>
+        </form>
+      </div>
+    </div>
 
   </div>
+  <p style="color:white; padding: 20px 0; margin:10px 0px;">For any query contact us at <a style="color:rgb(4,68,250)"
+      href="mailto:iste@nith.ac.in">iste@nith.ac.in</a></p>
+  <!-- ----------------------------Section End ---------------------------------- -->
 
 
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-cta">
+        <div class="row">
+          <div class="col-xl-4 col-md-4 mb-30">
+            <div class="single-cta">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="cta-text">
+                <h4>Find us</h4>
+                <span>E-415, KBH NIT Hamirpur, 177005</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-30">
+            <div class="single-cta">
+              <i class="fas fa-phone"></i>
+              <div class="cta-text">
+                <h4>Call us</h4>
+                <span>98052-79184</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-4 mb-30">
+            <div class="single-cta">
+              <i class="far fa-envelope-open"></i>
+              <div class="cta-text">
+                <h4>Mail us</h4>
+                <span>teamiste@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <div class="">
+          <div>
 
-
-
-
-
-
-
-
-
-
-
-  <!--☝ NOTHING TO BE SEEN HERE ☝-->
-  <div class="footer">This webiste is created by ISTE-NITH for interviews purpose only. Kindly contact is you want to
-    use it.</h5>
-  </div>
-  <script src="{% static 'js/index.js' %}"></script>
-  <script>
-    $(document).on('change', '.btn-file :file', function () {
-      var input = $(this),
-        numFiles = input.get(0).files ? input.get(0).files.length : 1,
-        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-      input.trigger('fileselect', [numFiles, label]);
-    });
-
-    $(document).ready(function () {
-      $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
-        console.log("teste");
-        var input_label = $(this).closest('.input-group').find('.file-input-label'),
-          log = numFiles > 1 ? numFiles + ' files selected' : label;
-
-        if (input_label.length) {
-          input_label.text(log);
-        } else {
-          if (log) alert(log);
-        }
-      });
-    });
-  </script>
-</body>
-
-</html>
+            <div class="footer-social-icon">
+              <span>Follow us</span>
+              <a href="https://www.facebook.com/teamistenith/"><i class="fab fa-facebook-f facebook-bg"></i></a>
+              <a href="https://twitter.com/istenith"><i class="fab fa-twitter twitter-bg"></i></a>
+              <a href="https://www.instagram.com/teamistenith/?hl=en"><i class="fab fa-instagram instagram-bg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="copyright-area">
+      <div class="container">
+        <div class="row">
+          <div class="">
+            <div class="copyright-text">
+              <p>Copyright &copy; 2022, All Right Reserved by ISTE-NITH </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% endblock %}

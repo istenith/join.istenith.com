@@ -3,5 +3,5 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def indexe(request):
+def index(request):
     return render(request, 'form.html')
