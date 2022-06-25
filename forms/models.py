@@ -13,8 +13,8 @@ def file_size(value):  # add this to some file where you can import it from
 
 class Registeration(models.Model):
     name = models.CharField(max_length=50)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=11)
+    email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=11, unique=True)
     branch = models.CharField(max_length=50)
     resume = models.FileField(upload_to='resumes/', validators=[file_size, FileExtensionValidator(allowed_extensions=["pdf"])], blank=False, null=False)
 
