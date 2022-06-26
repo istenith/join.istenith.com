@@ -1,0 +1,115 @@
+/* Inline wrapper */
+.demo-inline-wrapper > * {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.5rem 1.35rem 0 0;
+}
+
+.demo-inline-wrapper--v-m > * {
+    vertical-align: middle;
+}
+
+/* Buttons */
+.btn-demo > .btn {
+    margin: 0.25rem 0.35rem 0.25rem 0;
+}
+
+/* Animations */
+.animation-demo img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.animation-demo .form-row .btn {
+    margin-top: 0.5rem;
+}
+
+.animation-demo .nav-tabs {
+    margin: 0 -2.2rem 2.2rem;
+}
+
+/* Icons */
+.icons-demo__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.icons-demo__item:hover {
+    background-color: #2f414c;
+}
+
+.icons-demo__item > i {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    position: relative;
+    top: -0.1rem;
+}
+
+/* Card */
+.card-demo {
+    vertical-align: top;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 30px 0 0;
+    display: inline-block;
+}
+
+/* Badge */
+.badge-demo > .badge {
+    margin: 0.25rem 0.25rem 0 0
+}
+
+/* Dropdown */
+.dropdown-demo {
+    margin: 0.9rem 0.75rem 0 0;
+    display: inline-block;
+}
+
+/* Toast */
+.toast-demo-container {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    position: relative;
+    min-height: 180px;
+    padding: 2rem;
+}
+
+.toast--right,
+.toast--bottom-right,
+.toast--bottom-left {
+    position: absolute;
+    min-width: 300px;
+}
+
+.toast--right {
+    top: 2rem;
+    right: 2rem;
+}
+
+.toast--bottom-right {
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.toast--bottom-left {
+    bottom: 2rem;
+    left: 2rem;
+}
+
+/* Maps */
+.jqvmap {
+    height: 300px;
+}
+
+/* Colots */
+.color-demo {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 3px;
+}
