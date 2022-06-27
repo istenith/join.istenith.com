@@ -21,8 +21,8 @@
                     </div>
                     <div class="inputBox">
                       {{form.phone_number}}
-                      {% if form.phone_number.errors %}
                       <label for="">Phone Number</label>
+                      {% if form.phone_number.errors %}
                       <div class="help-block" style="color: red;">{{ form.phone_number.errors }}</div>
                       {% endif %}
                     </div>
@@ -34,7 +34,7 @@
                         <!-- <input type="file" class="input-file" id="file"> -->
                       {{form.resume|attr:"class:input-file"|attr:"id:file"}}
                     <label for="file" class="btn btn-tertiary js-labelFile">
-                        <i class="icon fa fa-check"></i>
+                        <i class="icon fa fa-upload"></i>
                         <span class="js-fileName"> Upload Your CV</span>
                       {% if form.resume.errors %}
                         </label>

@@ -135,17 +135,17 @@
       animation: LabelOnLoad 1s forwards 0s ease;
     }
 
-    @keyframes LabelOnLoad {
-      0% {
-        transform: rotate(0) translateY(-40px);
-        opacity: 0;
-      }
+    /* @keyframes LabelOnLoad { */
+    /*   0% { */
+    /*     transform: rotate(0) translateY(-40px); */
+    /*     opacity: 0; */
+    /*   } */
 
-      100% {
-        transform: rotate(0) translateY(0);
-        opacity: 1;
-      }
-    }
+    /*   100% { */
+    /*     transform: rotate(0) translateY(0); */
+    /*     opacity: 1; */
+    /*   } */
+    /* } */
 
     .box .inputBox input:focus~label,
     .box .inputBox input:valid~label {
@@ -228,13 +228,13 @@
 
         .icon:before {
           //font-awesome
-          content: "\f093";
+          content: "\f289";
         }
 
         &.has-file {
           .icon:before {
             //font-awesome
-            content: "\f093";
+            content: "\f289" !important;
             color: #5AAC7B;
           }
         }
@@ -262,7 +262,21 @@
       border: none;
       border-bottom: 2px solid #fff;
       margin-bottom: 20px;
+      /* transition: .5s; */
+      /* animation: LabelOnLoad 1s forwards 0s ease; */
     }
+
+    /* @keyframes LabelOnLoad { */
+    /*   0% { */
+    /*     transform: rotate(0) translateY(-40px); */
+    /*     opacity: 0; */
+    /*   } */
+
+    /*   100% { */
+    /*     transform: rotate(0) translateY(0); */
+    /*     opacity: 1; */
+    /*   } */
+    /* } */
   </style>
 </head>
 
@@ -294,12 +308,12 @@
             <h1 class="brand-heading" style="font-size: 49px;height: 21px;">Join Istenith</h1>
             <p class="intro-text" style="height: 35.1875px;font-size: 17px;">Lorem ipsum kuch daal do idhr</p>
             <div>
-                {% block success %}
-                {% endblock success %}
+              {% block success %}
+              {% endblock success %}
               <br>
               {% block form %}
               {% endblock form %}
-                         </div>
+            </div>
           </div>
         </div>
       </div>
@@ -357,23 +371,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="{% static 'assets/js/grayscale.js' %}"></script>
   <script>
-      (function () {
+    (function () {
 
-        'use strict';
+      'use strict';
 
-        $('.input-file').each(function () {
-          var $input = $(this),
-            $label = $input.next('.js-labelFile'),
-            labelVal = $label.html();
+      $('.input-file').each(function () {
+        var $input = $(this),
+          $label = $input.next('.js-labelFile'),
+          labelVal = $label.html();
 
-          $input.on('change', function (element) {
-            var fileName = '';
-            if (element.target.value) fileName = element.target.value.split('\\').pop();
-            fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
-          });
+        $input.on('change', function (element) {
+          var fileName = '';
+          if (element.target.value) fileName = element.target.value.split('\\').pop();
+          fileName ? $label.addClass('has-file').find('.js-fileName').html(fileName) : $label.removeClass('has-file').html(labelVal);
         });
+      });
 
-      })();
+    })();
 
   </script>
 </body>
