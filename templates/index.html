@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block form %}
+ <div class="box">
+                <form action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+                  {% csrf_token %}
+                  <div class="inputBox">
+                    <!-- <input type="text" name="name" required=""> -->
+                    {{form.name}}
+                    <label for="">Name</label>
+                    {% if form.name.errors %}
+                    <div class="help-block" style="color: red;>{{ form.name.errors }}</div>
+          {% endif %}
+                  </div>
+                  <div class=" inputBox">
+                      {{form.email}}
+                      {% if form.email.errors %}
+                      <div class="help-block" style="color: red;">{{ form.email.errors }}</div>
+                      {% endif %}
+                      <label for="">Email</label>
+                    </div>
+                    <div class="inputBox">
+                      {{form.phone_number}}
+                      {% if form.phone_number.errors %}
+                      <label for="">Phone Number</label>
+                      <div class="help-block" style="color: red;">{{ form.phone_number.errors }}</div>
+                      {% endif %}
+                    </div>
+                    {{form.branch|attr:"class:branch"}}
+                    {% if form.branch.errors %}
+                    <div class="help-block" style="color: red;>{{ form.branch.errors }}</div>
+          {% endif %}
+                  <div class=" form-group">
+                        <!-- <input type="file" class="input-file" id="file"> -->
+                      {{form.resume|attr:"class:input-file"|attr:"id:file"}}
+                    <label for="file" class="btn btn-tertiary js-labelFile">
+                        <i class="icon fa fa-check"></i>
+                        <span class="js-fileName"> Upload Your CV</span>
+                      {% if form.resume.errors %}
+                        </label>
+                      <div class="help-block" style="color: red;>{{ form.resume.errors }}</div>{% endif %}
+                      </div>
+
+                      <input type="submit" name="" value="Submit">
+                </form>
+              </div>
+{% endblock %}
