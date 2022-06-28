@@ -3,7 +3,12 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from forms.models import Registeration
 from django.utils.safestring import mark_safe
-from django.contrib.sites.shortcuts import get_current_site
+# from django.contrib.sites.shortcuts import get_current_site
+from django.contrib.admin import site
+import adminactions.actions as actions
+
+# register all adminactions
+actions.add_to_site(site)
 
 
 class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):

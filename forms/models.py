@@ -11,7 +11,7 @@ from django.utils.deconstruct import deconstructible
 @deconstructible
 class WhitelistEmailValidator(EmailValidator):
     def validate_domain_part(self, domain_part):
-        return False
+        raise ValidationError("Kindly submit form with your college email only.")
 
     def __eq__(self, other):
         return isinstance(other, WhitelistEmailValidator) and super().__eq__(other)

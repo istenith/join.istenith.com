@@ -9,13 +9,13 @@
                     {{form.name}}
                     <label for="">Name</label>
                     {% if form.name.errors %}
-                    <div class="help-block" style="color: red;>{{ form.name.errors }}</div>
+                    <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
           {% endif %}
                   </div>
                   <div class=" inputBox">
                       {{form.email}}
                       {% if form.email.errors %}
-                      <div class="help-block" style="color: red;">{{ form.email.errors }}</div>
+                      <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
                       {% endif %}
                       <label for="">Email</label>
                     </div>
@@ -23,12 +23,12 @@
                       {{form.phone_number}}
                       <label for="">Phone Number</label>
                       {% if form.phone_number.errors %}
-                      <div class="help-block" style="color: red;">{{ form.phone_number.errors }}</div>
+                      <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
                       {% endif %}
                     </div>
                     {{form.branch|attr:"class:branch"}}
                     {% if form.branch.errors %}
-                    <div class="help-block" style="color: red;>{{ form.branch.errors }}</div>
+                    <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;>{{ form.branch.errors }}</div>
           {% endif %}
                   <div class=" form-group">
                         <!-- <input type="file" class="input-file" id="file"> -->
@@ -36,9 +36,9 @@
                     <label for="file" class="btn btn-tertiary js-labelFile">
                         <i class="icon fa fa-upload"></i>
                         <span class="js-fileName"> Upload Your CV</span>
-                      {% if form.resume.errors %}
                         </label>
-                      <div class="help-block" style="color: red;>{{ form.resume.errors }}</div>{% endif %}
+                      {% if form.resume.errors %}
+                      <div class="help-block" style="margin-top:0px; color: #ffe300;>{{ form.resume.errors }}</div>{% endif %}
                       </div>
 
                       <input type="submit" name="" value="Submit">
