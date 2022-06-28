@@ -25,7 +25,7 @@ def file_size(value):  # add this to some file where you can import it from
 
 class Registeration(models.Model):
     BRANCH = (
-        (0, 'Choose Your Branch'),
+        ('The branch You choose', 'Choose Your Branch'),
         (1, 'Civil Engineering'),
         (2, 'Mechanical Engineering'),
         (3, 'Electrical Engineering'),
@@ -39,7 +39,7 @@ class Registeration(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(unique=True, validators=[WhitelistEmailValidator(whitelist=['nith.ac.in'])])
     phone_number = models.CharField(max_length=11, unique=True)
-    branch = models.PositiveIntegerField(choices=BRANCH, default='0')
+    branch = models.PositiveIntegerField(choices=BRANCH, default='The branch You choose')
     resume = models.FileField(upload_to='resumes/', validators=[file_size, FileExtensionValidator(allowed_extensions=["pdf"])], blank=False, null=False)
 
     def __str__(self):
