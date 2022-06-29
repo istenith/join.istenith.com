@@ -35,3 +35,5 @@ if settings.DEBUG:
                           document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+handler404 = 'forms.views.error_404_view'
+handler500= 'forms.views.error_500_view'

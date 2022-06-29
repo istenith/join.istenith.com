@@ -284,13 +284,43 @@
       border: 1px solid #ff0060;
       background-color: transparent;
     }
-    .btn-default:hover{
+
+    .btn-default:hover {
       color: #000;
       border: 1px solid #ff0060;
       background-color: #ff0060;
     }
-    u{
+
+    /* .btn-primary { */
+    /*   color: #ff0060; */
+    /*   border: 1px solid #ff0060; */
+    /*   background-color: transparent; */
+    /* } */
+    /* .btn-primary:hover{ */
+    /*   color: #000; */
+    /*   border: 1px solid #ff0060; */
+    /*   background-color: #ff0060; */
+    /* } */
+    btn-primary {
+      color: #212529;
+      background-color: #ff0060;
+      border-color: #ff0060;
+    }
+
+    u {
       text-decoration-color: #ff0060;
+    }
+
+
+
+    @media(max-width: 720px) {
+      .row {
+        margin-top: -80px;
+      }
+      .intro-text {
+        margin-top: 100px;
+      }
+
     }
   </style>
 </head>
@@ -318,11 +348,9 @@
   <header id="head" class="masthead">
     <div class="intro-body" id="container">
       <div class="container">
-        <div class="row d-xl-flex justify-content-xl-start" style="height: 456.984px;">
-          <div class="col-lg-8 mx-auto" style="height: 21px;">
-            <h1 class="brand-heading" style=" font-size: 49px;height: 21px;"><u>Application Form</u></h1>
-            <p class="intro-text" style="height: 35.1875px;font-size: 17px;">Lorem ipsum kuch daal do idhr</p>
-            <div>
+          {% block container %}
+          {% endblock container %}
+       
               {% block success %}
               {% endblock success %}
               <br>
@@ -349,7 +377,7 @@
   <section class="text-center download-section content-section" id="download">
     <div class="container">
       <div class="col-lg-8 mx-auto">
-          <h1><u>Download Sample CV</u></h1>
+        <h1><u>Download Sample CV</u></h1>
         <p>You can download a sample CV in .docx format and you can make your own or edit this.</p><button
           class="btn btn-primary btn-lg btn-default" type="button">Download sample CV</button>
       </div>
@@ -359,12 +387,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-            <h2><u>Contact us</u></h2>
+          <h2><u>Contact us</u></h2>
           <p>Here our scoials will go</p>
           <ul class="list-inline banner-social-buttons">
-            <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i
+            <li class="list-inline-item">&nbsp;<button class="btn  btn-lg btn-default" type="button"><i
                   class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></button></li>
-            <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i
+            <li class="list-inline-item">&nbsp;<button class="btn  btn-lg btn-default" type="button"><i
                   class="fa fa-twitter fa-fw"></i><span class="network-name">&nbsp;Twitter</span></button></li>
             <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i
                   class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></button></li>

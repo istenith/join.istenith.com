@@ -1,6 +1,3 @@
-from http.client import HTTPResponse
-from urllib.request import Request
-from django.http.response import HttpResponse
 from django.shortcuts import render
 from .forms import RegistrationForm
 # Create your views here.
@@ -13,6 +10,12 @@ from .forms import RegistrationForm
 #     else:
 #         print('form is not working')
 #     return render(request, 'form.html', {'form': form})
+def error_404_view(request, exception):
+    return render(request, '404.html')
+def error_500_view(request):
+    return render(request, '500.html')
+
+
 
 def index(request):
     if request.method == "POST":
