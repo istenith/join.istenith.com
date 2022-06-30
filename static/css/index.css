@@ -1,7 +1,19 @@
 #download{
-  background-image: url('../assets/img/downloads-bg.jpg');
+  background-image: url('../assets/img/download.webp');
+  background-image: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 35%) 0%,
+      rgb(0 0 0) 100%
+    ),
+    url("../assets/img/download.webp");
 }
 
 #head{
-  background-image: url("../assets/img/intro-bg.jpg");
+  background-image: url("../assets/img/intro.jpg");
+    background-image: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 35%) 0%,
+      rgb(0 0 0) 100%
+    ),
+    url("../assets/img/intro.jpg");
 }

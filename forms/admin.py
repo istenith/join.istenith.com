@@ -8,7 +8,7 @@ from django.contrib.admin import site
 import adminactions.actions as actions
 
 # register all adminactions
-actions.add_to_site(site)
+actions.add_to_site(site, exclude=['merge', 'export_delete_tree', 'export_as_xls', 'graph_queryset', 'export_as_csv', 'export_as_fixture'])
 
 
 class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
