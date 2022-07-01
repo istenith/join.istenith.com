@@ -9,7 +9,8 @@
 {% endblock container %}
 {% block form %}
  <div class="box">
-                <form action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+                <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+                  <input autocomplete="false" name="hidden" type="text" style="display:none;">
                   {% csrf_token %}
                   <div class="inputBox">
                     <!-- <input type="text" name="name" required=""> -->
