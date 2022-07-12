@@ -17,6 +17,10 @@
     @import url(https://fonts.googleapis.com/css?family=Lobster);
 
     @import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+    
+    #contact button{
+     width: 172px; 
+    }
 
     .alert .inner {
       display: block;
@@ -328,6 +332,34 @@
       }
 
     }
+
+     .btn-custom{
+      background: transparent;
+      border: none;
+      outline: none;
+      width: 100%;
+      border: 2px solid #ff0060;
+      color: #ff0060;
+      /* background: #03A9F4; */
+      padding: 10px 20px;
+      cursor: pointer;
+      /* border-radius: 5px; */
+      transition: all .3s ease-in-out;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-family: Cabin, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    }
+
+    .btn-custom:hover {
+      /* background-color: rgba(3, 169, 244, 0.7); */
+      background: #ff0060;
+      font-weight: 400;
+      font-family: Cabin, Helvetica Neue, Helvetica, Arial, sans-serif;
+      color: #000;
+    }
+
   </style>
 </head>
 
@@ -373,9 +405,9 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2><u>About ISTENITH</u></h2>
-          <p>About ISte likg do kuch idhr nhi toh khaali khali lgega ye</p>
-          <p>or haan isme b daal dena kuch kya pta achha lg jaye</p>
-          <p>lorem ipsum bhai bhai bhai</p>
+          <p>About ISte likg do kuch idhr nhi toh khaali khali lgega ye
+          or haan isme b daal dena kuch kya pta achha lg jaye
+          lorem ipsum bhai bhai bhai</p>
         </div>
       </div>
     </div>
@@ -384,8 +416,12 @@
     <div class="container">
       <div class="col-lg-8 mx-auto">
         <h1><u>Download Sample CV</u></h1>
-        <p>You can download a sample CV in .docx format and you can make your own or edit this.</p><button
-          class="btn btn-primary btn-lg btn-default" type="button">Download sample CV</button>
+        <p>You can download a sample CV in .docx format and you can make your own or edit this.</p>
+          <ul class="list-inline banner-social-buttons">
+          <li class="list-inline-item"> <button class="btn-custom" type="button">Download sample CV</button></li>
+          <li class="list-inline-item"><button class="btn-custom" type="button">Download sample CV</button></li>
+          </ul>
+
       </div>
     </div>
   </section>
@@ -396,11 +432,11 @@
           <h2><u>Contact us</u></h2>
           <p>Here our scoials will go</p>
           <ul class="list-inline banner-social-buttons">
-            <li class="list-inline-item">&nbsp;<button class="btn  btn-lg btn-default" type="button"><i
+            <li class="list-inline-item">&nbsp;<button class="btn-custom" type="button"><i
                   class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></button></li>
-            <li class="list-inline-item">&nbsp;<button class="btn  btn-lg btn-default" type="button"><i
+            <li class="list-inline-item">&nbsp;<button class="btn-custom" type="button"><i
                   class="fa fa-twitter fa-fw"></i><span class="network-name">&nbsp;Twitter</span></button></li>
-            <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i
+            <li class="list-inline-item">&nbsp;<button class="btn-custom" type="button"><i
                   class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></button></li>
           </ul>
         </div>
