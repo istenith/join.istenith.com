@@ -52,7 +52,7 @@ class Registeration(models.Model):
         ],
         blank=False,
         null=False)
-    terms_confirmed = models.BooleanField(default=False)
+    terms_confirmed = models.BooleanField(default=False, verbose_name="Terms & Conditions")
 
     def __str__(self):
         return "{} - {} - {}".format(self.name, self.email, self.phone_number)

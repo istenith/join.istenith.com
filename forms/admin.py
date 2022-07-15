@@ -1,6 +1,6 @@
-# from urllib import request
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
+from import_export.resources import Field, ModelResource
 from forms.models import Registeration
 from django.utils.safestring import mark_safe
 # from django.contrib.sites.shortcuts import get_current_site
@@ -16,7 +16,8 @@ actions.add_to_site(site,
 
 
 class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('name', 'email', 'branch', 'phone_number', 'resume_url')
+    list_display = ('name', 'email', 'branch', 'phone_number',
+                    'terms_confirmed', 'resume_url')
     search_fields = ('name', 'email', 'branch', 'phone_number')
 
     def resume_url(self, instance):
