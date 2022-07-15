@@ -13,6 +13,14 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='registeration',
             name='branch',
-            field=models.PositiveIntegerField(choices=[(1, 'Civil Engineering'), (2, 'Mechanical Engineering'), (3, 'Electrical Engineering'), (4, 'Elctronics And Communication Engineering'), (5, 'Chemical Engineering'), (6, 'Computer Science Engineering'), (7, 'Material Science'), (8, 'Engineering Physics'), (9, 'Mathematics And Computing')], default='Select Your Branch'),
+            field=models.PositiveIntegerField(choices=[
+                (1, 'Civil Engineering'), (2, 'Mechanical Engineering'),
+                (3, 'Electrical Engineering'),
+                (4, 'Elctronics And Communication Engineering'),
+                (5, 'Chemical Engineering'),
+                (6, 'Computer Science Engineering'), (7, 'Material Science'),
+                (8, 'Engineering Physics'), (9, 'Mathematics And Computing')
+            ],
+                                              default='Select Your Branch'),
         ),
     ]

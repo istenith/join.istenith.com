@@ -17,3 +17,5 @@ sqlparse
 tablib
 xlrd
 xlwt
+django-phonenumber-field==6.3.0
+django-phonenumbers==1.0.1

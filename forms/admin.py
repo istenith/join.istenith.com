@@ -8,7 +8,11 @@ from django.contrib.admin import site
 import adminactions.actions as actions
 
 # register all adminactions
-actions.add_to_site(site, exclude=['merge', 'export_delete_tree', 'export_as_xls', 'graph_queryset', 'export_as_csv', 'export_as_fixture'])
+actions.add_to_site(site,
+                    exclude=[
+                        'merge', 'export_delete_tree', 'export_as_xls',
+                        'graph_queryset', 'export_as_csv', 'export_as_fixture'
+                    ])
 
 
 class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -18,7 +22,8 @@ class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     def resume_url(self, instance):
         resume = instance.resume.url
         if resume:
-            return mark_safe('<a target="_blank" href="%s">Resume Link</a>' % (resume))
+            return mark_safe('<a target="_blank" href="%s">Resume Link</a>' %
+                             (resume))
         else:
             return '-'
 
