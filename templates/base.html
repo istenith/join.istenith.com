@@ -22,6 +22,15 @@
       width: 172px;
     }
 
+    .modal-content {
+      backdrop-filter: blur(10px);
+      background-color: #1e1e1e47;
+      border-radius: 14px;
+      top: 4vh;
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0px 10px 81px #add8e678;
+    }
+
     .alert .inner {
       display: block;
       padding: 6px;
@@ -453,13 +462,10 @@
   </footer>
 
   <!-- large modal -->
-  <div style="backdrop-filter: inherit;" class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div style="backdrop-filter: inherit;" class="modal fade" id="largeModal" tabindex="-1" role="dialog"
+    aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content" style="backdrop-filter: blur(10px);
-      background-color: #1e1e1e47;
-      border-radius: 14px;
-      top: 4vh;
-    box-shadow: 0px 10px 81px #add8e678;">
+      <div class="modal-content" style="">
         <div class="modal-header">
           <h4 class="modal-title" id="myModalLabel">Large Modal</h4>
           <button type="button" class="close" style="color: red;" data-dismiss="modal" aria-label="Close">
