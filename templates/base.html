@@ -2,7 +2,6 @@
 {% load static %}
 {% for template in template %}
 <html>
-<<<<<<< HEAD
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -246,295 +245,36 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         padding: 0 10px;
-=======
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>Join | ISTE-NITH</title>
-    <link
-      rel="shortcut icon"
-      href="{%static 'images/iste-logo-blue.png'%}"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}"
-    />
-    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="{% static 'assets/fonts/font-awesome.min.css' %}"
-    />
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Lobster);
-
-      @import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
-
-      .alert .inner {
-        display: block;
-        padding: 6px;
-        margin: 6px;
-        border-radius: 3px;
-        border: 1px solid rgb(180, 180, 180);
-        background-color: rgb(212, 212, 212);
-      }
-
-      .alert .close {
-        float: right;
-        margin: 3px 12px 0px 0px;
->>>>>>> 291c28cd9a525f8051be29d821bfafd994915933
         cursor: pointer;
-      }
 
-<<<<<<< HEAD
         .icon:before {
           //font-awesome
           content: "\f289";
-=======
-      .alert .inner,
-      .alert .close {
-        color: rgb(88, 88, 88);
-      }
-
-      .alert input {
-        display: none;
-      }
-
-      .alert input:checked ~ * {
-        animation-name: dismiss, hide;
-        animation-duration: 300ms;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-        animation-delay: 0s, 100ms;
-      }
-
-      .alert.success .inner {
-        border: 1px solid rgb(214, 233, 198);
-        background-color: rgb(223, 240, 216);
-      }
-
-      .alert.success .inner,
-      .alert.success .close {
-        color: rgb(70, 136, 71);
-      }
-
-      @keyframes dismiss {
-        0% {
-          opacity: 1;
->>>>>>> 291c28cd9a525f8051be29d821bfafd994915933
         }
 
-        90%,
-        100% {
-          opacity: 0;
-          font-size: 0.1px;
-          transform: scale(0);
-        }
-      }
-
-      @keyframes hide {
-        100% {
-          height: 0px;
-          width: 0px;
-          overflow: hidden;
-          margin: 0px;
-          padding: 0px;
-          border: 0px;
-        }
-      }
-
-      .box {
-        position: absolute;
-        /* top: 50%; */
-        margin-top: 27vh;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 560px;
-        padding: 40px;
-        background: rgba(0, 0, 0, 0);
-        box-sizing: border-box;
-        /* box-shadow: 0 15px 25px rgba(0, 0, 0, .5); */
-        border-radius: 10px;
-      }
-
-      .box h2 {
-        margin: 0 0 30px;
-        padding: 0;
-        color: #fff;
-        text-align: center;
-      }
-
-      .box .inputBox {
-        position: relative;
-      }
-
-      .box .inputBox input {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 16px;
-        color: #fff;
-        letter-spacing: 1px;
-        margin-bottom: 30px;
-        border: none;
-        border-bottom: 2px solid #fff;
-        outline: none;
-        background: transparent;
-      }
-
-      .box .inputBox label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 22px 0;
-        font-size: 16px;
-        color: #fff;
-        pointer-events: none;
-        transition: 0.5s;
-        animation: LabelOnLoad 1s forwards 0s ease;
-      }
-      .isteLOGO {
-        width: px;
-        height: auto;
-      }
-
-      @keyframes LabelOnLoad {
-        0% {
-          transform: rotate(0) translateY(-40px);
-          opacity: 0;
-        }
-
-        100% {
-          transform: rotate(0) translateY(0);
-          opacity: 1;
-        }
-      }
-
-      .box .inputBox input:focus ~ label,
-      .box .inputBox input:valid ~ label {
-        top: -33px;
-        left: 0;
-        color: #42dca3;
-        font-size: 15px;
-      }
-
-      .box input[type="submit"] {
-        background: transparent;
-        border: none;
-        outline: none;
-        width: 100%;
-        border: 2px solid #42dca3;
-        color: #42dca3;
-        /* background: #03A9F4; */
-        padding: 10px 20px;
-        cursor: pointer;
-        /* border-radius: 5px; */
-        transition: all 0.3s ease-in-out;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-family: Cabin, Helvetica Neue, Helvetica, Arial, sans-serif;
-      }
-
-      .box input[type="submit"]:hover {
-        /* background-color: rgba(3, 169, 244, 0.7); */
-        background: #42dca3;
-        font-weight: 400;
-        font-family: Cabin, Helvetica Neue, Helvetica, Arial, sans-serif;
-        color: #000;
-      }
-      .isteLOGO {
-        width: 71px;
-        height: auto;
-      }
-      @media (max-width: 720px) {
-        .box {
-          width: 80%;
-        }
-      }
-
-      .btn-tertiary {
-        color: #fff;
-        padding: 0;
-        line-height: 40px;
-        width: 100%;
-        margin: auto;
-        display: block;
-        border: 2px solid #fff;
-        /*   &:hover, */
-        /*   &:focus { */
-        /*     color: lighten(#fff, 2); */
-        /*     border-color: lighten(#fff, 2%); */
-        /*   } */
-      }
-
-      .btn-tertiary:hover {
-        color: lighten(#fff, 2);
-        border-color: lighten(#fff, 2%);
-      }
-
-      /* input file style */
-
-      .input-file {
-        width: 0.1px;
-        height: 0.1px;
-        opacity: 0;
-        overflow: hidden;
-        position: absolute;
-        z-index: -1;
-
-        + .js-labelFile {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          padding: 0 10px;
-          cursor: pointer;
-
+        &.has-file {
           .icon:before {
             //font-awesome
-<<<<<<< HEAD
             content: "\f289" !important;
             color: #5AAC7B;
-=======
-            content: "\f093";
-          }
-
-          &.has-file {
-            .icon:before {
-              //font-awesome
-              content: "\f093";
-              color: #5aac7b;
-            }
->>>>>>> 291c28cd9a525f8051be29d821bfafd994915933
           }
         }
       }
+    }
 
-      #mainNav .nav-link.active {
-        outline: none;
-        background-color: transparent;
-      }
+    #mainNav .nav-link.active {
+      outline: none;
+      background-color: transparent;
+    }
 
-      select option {
-        color: white;
-        background: #000;
-        font-size: 16px;
-        font-weight: 100;
-        padding: 10px;
-      }
+    select option {
+      color: white;
+      background: #000;
+      font-size: 16px;
+      font-weight: 100;
+      padding: 10px;
+    }
 
-<<<<<<< HEAD
     .branch {
       width: 100%;
       background: #0000;
@@ -656,7 +396,6 @@
       <div class="container">
         {% block container %}
         {% endblock container %}
-
         {% block success %}
         {% endblock success %}
         <br>
@@ -685,7 +424,7 @@
         <p>{{template.download_para}}</p>
         <ul class="list-inline banner-social-buttons">
           <li class="list-inline-item"> <a href="/media/{{template.download_cv_pdf}}" download="/media/{{template.download_cv_pdf}}"><button class="btn-custom" type="button">Download sample CV</button></a></li>
-          <li class="list-inline-item"><a href="/media/{{template.download_cv_doc.url}}" download= "/media/{{template.download_cv_doc}}"><button class="btn-custom" type="button">Download sample CV</button></a></li>
+          <li class="list-inline-item"><a href="/media/{{template.download_cv_doc}}" download= "/media/{{template.download_cv_doc}}"><button class="btn-custom" type="button">Download sample CV</button></a></li>
         </ul>
 
       </div>
@@ -766,182 +505,5 @@
   </script>
 </body>
 
-=======
-      .branch {
-        width: 100%;
-        background: #0000;
-        font-size: 16px;
-        color: #fff;
-        border: none;
-        border-bottom: 2px solid #fff;
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-
-  <body id="page-top">
-    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
-      <div class="container">
-        <img class="isteLOGO" src="{%static 'images/iste.png'%}" alt="" />
-        <a class="navbar-brand js-scroll-trigger" href="#">&nbspISTE-NITH</a
-        ><button
-          data-toggle="collapse"
-          class="navbar-toggler navbar-toggler-right"
-          data-target="#navbarResponsive"
-          type="button"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          value="Menu"
-        >
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item nav-link js-scroll-trigger">
-              <a class="nav-link active js-scroll-trigger" href="#container"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item nav-link js-scroll-trigger">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item nav-link js-scroll-trigger">
-              <a class="nav-link js-scroll-trigger" href="#download"
-                >Download</a
-              >
-            </li>
-            <li class="nav-item nav-link js-scroll-trigger">
-              <a class="nav-link js-scroll-trigger" href="#contact">contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <header id="head" class="masthead">
-      <div class="intro-body" id="container">
-        <div class="container">
-          <div
-            class="row d-xl-flex justify-content-xl-start"
-            style="height: 456.984px"
-          >
-            <div class="col-lg-8 mx-auto" style="height: 21px">
-              <h1 class="brand-heading" style="font-size: 49px; height: 21px">
-                Join Team-ISTE
-              </h1>
-              <p class="intro-text" style="height: 35.1875px; font-size: 17px">
-                Kindly fill the following details carefully.
-              </p>
-              <div>
-                {% block success %} {% endblock success %}
-                <br />
-                {% block form %} {% endblock form %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section class="text-center content-section" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>About ISTE-NITH</h2>
-            <p>About ISte likh do kuch idhr nhi toh khaali khali lgega ye</p>
-            <p>or haan isme b daal dena kuch kya pta achha lg jaye</p>
-            <p>lorem ipsum bhai bhai bhai</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="text-center download-section content-section" id="download">
-      <div class="container">
-        <div class="col-lg-8 mx-auto">
-          <h1>Download Sample CV</h1>
-          <p>
-            You can download a sample CV in .docx format and you can make your
-            own or edit this.
-          </p>
-          <button class="btn btn-primary btn-lg btn-default" type="button">
-            Download sample CV
-          </button>
-        </div>
-      </div>
-    </section>
-    <section class="text-center content-section" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Contact us</h2>
-            <p>Here our scoials will go</p>
-            <ul class="list-inline banner-social-buttons">
-              <li class="list-inline-item">
-                &nbsp;<button
-                  class="btn btn-primary btn-lg btn-default"
-                  type="button"
-                >
-                  <i class="fa fa-google-plus fa-fw"></i
-                  ><span class="network-name">&nbsp; Google+</span>
-                </button>
-              </li>
-              <li class="list-inline-item">
-                &nbsp;<button
-                  class="btn btn-primary btn-lg btn-default"
-                  type="button"
-                >
-                  <i class="fa fa-twitter fa-fw"></i
-                  ><span class="network-name">&nbsp;Twitter</span>
-                </button>
-              </li>
-              <li class="list-inline-item">
-                &nbsp;<button
-                  class="btn btn-primary btn-lg btn-default"
-                  type="button"
-                >
-                  <i class="fa fa-github fa-fw"></i
-                  ><span class="network-name">&nbsp;github</span>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="map-clean"></div>
-    <footer>
-      <div class="container text-center">
-        <p>Copyright © ISTE-NITH 2022</p>
-        <p>
-          This website is made for submissions purpose only. Source Code can be
-          share. Kindly contact any of member if you want the code.
-        </p>
-      </div>
-    </footer>
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="{% static 'assets/js/grayscale.js' %}"></script>
-    <script>
-      (function () {
-        "use strict";
-
-        $(".input-file").each(function () {
-          var $input = $(this),
-            $label = $input.next(".js-labelFile"),
-            labelVal = $label.html();
-
-          $input.on("change", function (element) {
-            var fileName = "";
-            if (element.target.value)
-              fileName = element.target.value.split("\\").pop();
-            fileName
-              ? $label.addClass("has-file").find(".js-fileName").html(fileName)
-              : $label.removeClass("has-file").html(labelVal);
-          });
-        });
-      })();
-    </script>
-  </body>
->>>>>>> 291c28cd9a525f8051be29d821bfafd994915933
 </html>
 {% endfor %}
