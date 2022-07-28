@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
+{% for template in template %}
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -371,7 +371,6 @@
     }
   </style>
 </head>
-
 <body id="page-top">
   <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
     <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">ISTE-NITH</a><button
@@ -413,10 +412,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2><u>About ISTENITH</u></h2>
-          <p>About ISte likg do kuch idhr nhi toh khaali khali lgega ye
-            or haan isme b daal dena kuch kya pta achha lg jaye
-            lorem ipsum bhai bhai bhai</p>
+          <h2>About ISTE-NITH</h2>
+          <p>{{template.about_para}}</p>
         </div>
       </div>
     </div>
@@ -425,10 +422,10 @@
     <div class="container">
       <div class="col-lg-8 mx-auto">
         <h1><u>Download Sample CV</u></h1>
-        <p>You can download a sample CV in .docx format and you can make your own or edit this.</p>
+        <p>{{template.download_para}}</p>
         <ul class="list-inline banner-social-buttons">
-          <li class="list-inline-item"> <button class="btn-custom" type="button">Download sample CV</button></li>
-          <li class="list-inline-item"><button class="btn-custom" type="button">Download sample CV</button></li>
+          <li class="list-inline-item"> <a href="/media/{{template.download_cv_pdf}}" download="/media/{{template.download_cv_pdf}}"><button class="btn-custom" type="button">Download sample CV</button></a></li>
+          <li class="list-inline-item"><a href="/media/{{template.download_cv_doc.url}}" download= "/media/{{template.download_cv_doc}}"><button class="btn-custom" type="button">Download sample CV</button></a></li>
         </ul>
 
       </div>
@@ -439,10 +436,10 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2><u>Contact us</u></h2>
-          <p>Here our scoials will go</p>
+          <p>{{template.contact_para}}</p>
           <ul class="list-inline banner-social-buttons">
             <li class="list-inline-item">&nbsp;<button class="btn-custom" type="button"><i
-                  class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></button></li>
+                  class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+ </span></button></li>
             <li class="list-inline-item">&nbsp;<button class="btn-custom" type="button"><i
                   class="fa fa-twitter fa-fw"></i><span class="network-name">&nbsp;Twitter</span></button></li>
             <li class="list-inline-item">&nbsp;<button class="btn-custom" type="button"><i
@@ -456,8 +453,7 @@
   <footer>
     <div class="container text-center">
       <p>Copyright © ISTE-NITH 2022</p>
-      <p>This website is made for submissions purpose only. Source Code can be share. Kindly contact any of member if
-        you want the code.</p>
+      <p>{{template.copyright_para}}</p>
     </div>
   </footer>
 
@@ -511,3 +507,4 @@
 </body>
 
 </html>
+{% endfor %}

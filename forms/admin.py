@@ -1,7 +1,10 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 from import_export.resources import Field, ModelResource
-from forms.models import Registeration
+from forms.models import Registeration, Template
+
+# from forms.models import Downloads
+# from forms.models import Contact
 from django.utils.safestring import mark_safe
 # from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.admin import site
@@ -29,4 +32,7 @@ class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
             return '-'
 
 
+admin.site.register(Template)
+# admin.site.register(Downloads)
+# admin.site.register(Contact)
 admin.site.register(Registeration, RegAdmin)
