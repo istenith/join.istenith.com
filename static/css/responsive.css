@@ -1,10 +1,6 @@
 /* Responsiveness of the site */
 
 @media screen and (max-width: 575px) {
-  .isteLogo {
-    width: 70px;
-    height: auto;
-  }
   .isteHeading {
     position: relative;
     margin-left: 60px;
