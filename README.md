@@ -9,10 +9,13 @@ This website is using django backend. All you need to do is to go through https:
 1. First of all install Django:
 
 For any system:
+
 ```console
   python -m pip install Django
 ```
+
 For ArchLinux:
+
 ```console
 sudo pacman -S python-django
 ```
@@ -23,7 +26,7 @@ sudo pacman -S python-django
 git clone https://github.com/istenith/join.istenith.com.git
 ```
 
-3. Change the directory to prody-2023 using:
+3. Change the directory to join.istenith.com using:
 
 ```console
 cd join.istenith.com
@@ -48,7 +51,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-7. Migrate all the database 
+7. Migrate all the database
+
 ```console
 python manage.py migrate
 ```
