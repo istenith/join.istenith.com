@@ -12,17 +12,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 @ deconstructible
-class WhitelistEmailValidator(EmailValidator):
-
-    def validate_domain_part(self, domain_part):
-        raise ValidationError(
-            "Kindly submit form with your college email only.")
-
-    def __eq__(self, other):
-        return isinstance(other,
-                          WhitelistEmailValidator) and super().__eq__(other)
-
-
 def file_size(value):  # add this to some file where you can import it from
     limit = 3 * 1024 * 1024
     if value.size > limit:
