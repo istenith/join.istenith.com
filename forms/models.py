@@ -1,6 +1,9 @@
+from ast import Param
+import re
 from operator import truediv
 from pickle import TRUE
 from django.core.validators import FileExtensionValidator
+from django.core.validators import RegexValidator
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import EmailValidator
@@ -8,7 +11,7 @@ from django.utils.deconstruct import deconstructible
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-@deconstructible
+@ deconstructible
 class WhitelistEmailValidator(EmailValidator):
 
     def validate_domain_part(self, domain_part):
@@ -43,7 +46,7 @@ class Registeration(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(
         unique=True,
-        validators=[WhitelistEmailValidator(whitelist=['nith.ac.in'])])
+        validators=[RegexValidator(regex=r"^[2][1][a-z]{3}\d{3}@[nith.ac.in]*", message="Kindly submit form with your college email only.")],)
     phone_number = PhoneNumberField(unique=True)
     branch = models.CharField(choices=BRANCH, max_length=100, default='')
     resume = models.FileField(
@@ -69,10 +72,3 @@ class Template(models.Model):
     download_cv_doc = models.FileField(upload_to="sample_doc/", null=True, blank=True)
     contact_para = models.CharField(max_length=10000, null=True, blank=True)
     copyright_para = models.CharField(max_length=10000, null=True, blank=True)
-#  class Downloads(models.Model):
-# #  title.Download= models.CharField(max_length=50)
-# #  para= models.CharField(max_length=500)
-
-# class Contact(models.Model):
-#  title-contact= models.CharField(max_length=50)
-#  para= models.CharField(max_length=500)
