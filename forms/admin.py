@@ -33,6 +33,4 @@ class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 
 admin.site.register(Template)
-# admin.site.register(Downloads)
-# admin.site.register(Contact)
 admin.site.register(Registeration, RegAdmin)
