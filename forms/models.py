@@ -28,7 +28,7 @@ class Registeration(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(
         unique=True,
-        validators=[RegexValidator(regex=r"^[2][1][a-z]{3}\d{3}@[nith.ac.in]*", message="Kindly submit form with your college email only.")],)
+        validators=[RegexValidator(regex=r"^[2][1][b][a-z]{2}\d{3}@[nith.ac.in]*", message="Kindly submit form with your college email only.")],)
     phone_number = PhoneNumberField(unique=True)
     branch = models.CharField(choices=BRANCH, max_length=100, default='')
     resume = models.FileField(
@@ -54,6 +54,6 @@ class Template(models.Model):
     download_cv_doc = models.FileField(upload_to="sample_doc/", null=True, blank=True)
     contact_para = models.CharField(max_length=10000000, null=True, blank=True)
     copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
+    
     terms_conditions_title = models.CharField(max_length=10000, null=True, blank=True)
     terms_conditions_content = models.CharField(max_length=10000, null=True, blank=True)
-    
