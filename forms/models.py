@@ -1,17 +1,10 @@
-from ast import Param
-import re
-from operator import truediv
-from pickle import TRUE
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.core.validators import EmailValidator
-from django.utils.deconstruct import deconstructible
 from phonenumber_field.modelfields import PhoneNumberField
 
 
-@ deconstructible
 def file_size(value):  # add this to some file where you can import it from
     limit = 3 * 1024 * 1024
     if value.size > limit:
@@ -54,10 +47,10 @@ class Registeration(models.Model):
 
 class Template(models.Model):
     brand_heading = models.CharField(max_length=1000, null=True, blank=True)
-    intro_text = models.CharField(max_length=10000, null=True, blank=True)
-    about_para = models.CharField(max_length=10000, null=True, blank=True)
-    download_para = models.CharField(max_length=10000, null=True, blank=True)
+    intro_text = models.CharField(max_length=100000000, null=True, blank=True)
+    about_para = models.CharField(max_length=100000000, null=True, blank=True)
+    download_para = models.CharField(max_length=1000000, null=True, blank=True)
     download_cv_pdf = models.FileField(upload_to="sample_pdf/", null=True, blank=True)
     download_cv_doc = models.FileField(upload_to="sample_doc/", null=True, blank=True)
-    contact_para = models.CharField(max_length=10000, null=True, blank=True)
-    copyright_para = models.CharField(max_length=10000, null=True, blank=True)
+    contact_para = models.CharField(max_length=10000000, null=True, blank=True)
+    copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
