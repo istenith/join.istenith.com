@@ -37,11 +37,3 @@ $(document).ready(function () {
   $input.on("focus", onInputFocus);
   $input.on("blur", onInputBlur);
 });
-
-// Declared the regx variable
-//  declared a variable in js having the starting 2 characters of the email via getelement method
-//  now if statment used and if(regX== true), then run the success page ki submit hogya successfully.
-//  if the statemnet is false then throw the same type error that we get in the Django emailValidator
-//  return the same home page to refill the form easy af
-// aidjafha
-// disojfioa

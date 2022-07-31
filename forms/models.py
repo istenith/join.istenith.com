@@ -56,6 +56,6 @@ class Template(models.Model):
     copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
     whatsapp = models.CharField(max_length=10000, null=True, blank=True)
     twitter = models.CharField(max_length=10000, null=True, blank=True)
-    insta = models.CharField(max_length=10000, null=True, blank=True)
+    instagram = models.CharField(max_length=10000, null=True, blank=True)
     terms_conditions_title = models.CharField(max_length=10000, null=True, blank=True)
     terms_conditions_content = models.CharField(max_length=10000, null=True, blank=True)
