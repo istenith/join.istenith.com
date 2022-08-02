@@ -27,6 +27,12 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://isteinterview.azurewebsites.net/',
+    'https://join.istenith.com',
+    'http://join.istenith.com',
+]
+
 INSTALLED_APPS = [
     'forms',
     'phonenumber_field',
