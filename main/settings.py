@@ -27,9 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'isteinterview.azurewebsites.net', 'join.istenith.com', 'localhost']
 
-SITE_ID = 1
 # Application definition
-
 INSTALLED_APPS = [
     'forms',
     'phonenumber_field',
