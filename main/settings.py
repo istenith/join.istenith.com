@@ -25,9 +25,8 @@ SECRET_KEY = 'a)*#0p#x9s4_g!p5mrh*4bars7z^ub(^8t@e7mn9cao24r(e#+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'isteinterview.azurewebsites.net', 'join.istenith.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
-# Application definition
 INSTALLED_APPS = [
     'forms',
     'phonenumber_field',
