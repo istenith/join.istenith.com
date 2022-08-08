@@ -427,6 +427,7 @@
   <header id="head" class="masthead">
     <div class="intro-body" id="container">
       <div class="container">
+        {% if template.Registeration_Closed == 0 %}
         {% block container %}
         {% endblock container %}
         {% block success %}
@@ -434,6 +435,9 @@
         <br>
         {% block form %}
         {% endblock form %}
+        {% else %}
+        Registrations are closed for now.
+        {% endif %}
       </div>
     </div>
     </div>

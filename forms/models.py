@@ -55,6 +55,7 @@ class Template(models.Model):
     download_cv_doc = models.FileField(upload_to="sample_doc/", null=True, blank=True)
     contact_para = models.CharField(max_length=10000000, null=True, blank=True)
     copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
+    Registeration_Closed = models.BooleanField(default=False)
 
 
 class Terms_n_Condition(models.Model):

@@ -1,4 +1,4 @@
-from .forms import RegistrationForm
+from .forms import RegisterationForm
 from django.shortcuts import render
 from .models import Template, Social_Link, Terms_n_Condition
 
@@ -16,12 +16,12 @@ def index(request):
     social = Social_Link.objects.all()
     terms = Terms_n_Condition.objects.all()
     if request.method == "POST":
-        form = RegistrationForm(request.POST, request.FILES)
+        form = RegisterationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return render(request, "success.html", {"template": template})
         else:
             context = {"form": form, "template": template}
             return render(request, "index.html", context)
-    form = RegistrationForm()
+    form = RegisterationForm()
     return render(request, "index.html", {"form": form, "template": template, "social": social, "terms": terms})
