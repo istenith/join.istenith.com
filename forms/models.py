@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
@@ -54,8 +55,13 @@ class Template(models.Model):
     download_cv_doc = models.FileField(upload_to="sample_doc/", null=True, blank=True)
     contact_para = models.CharField(max_length=10000000, null=True, blank=True)
     copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
-    whatsapp = models.CharField(max_length=10000, null=True, blank=True)
-    twitter = models.CharField(max_length=10000, null=True, blank=True)
-    instagram = models.CharField(max_length=10000, null=True, blank=True)
-    terms_conditions_title = models.CharField(max_length=10000, null=True, blank=True)
-    terms_conditions_content = models.CharField(max_length=10000, null=True, blank=True)
+
+
+class Terms_n_Condition(models.Model):
+    tc_title = models.CharField(max_length=1000, null=True, blank=True)
+    tc_content = models.CharField(max_length=1000, null=True, blank=True)
+
+
+class Social_Link(models.Model):
+    s_name = models.CharField(max_length=1000, null=True, blank=True)
+    s_link = models.CharField(max_length=1000, null=True, blank=True)

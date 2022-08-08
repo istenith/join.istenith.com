@@ -474,42 +474,40 @@
           <h2>Contact us</h2>
           <p>{{template.contact_para|safe}}</p>
           <ul class="list-inline banner-social-buttons">
-            <li class="list-inline-item">&nbsp; <a href="https://wa.me/{{template.whatsapp|safe}}" target=_blank><button
-                  class="btn-custom" type="button"><i class="fa fa-whatsapp fa-fw"></i><span
-                    class="network-name">&nbsp;Whatsapp</span></button></a></li>
-            <li class="list-inline-item">&nbsp; <a href="https://twitter.com/{{template.twitter|safe}}"
-                target=_blank><button class="btn-custom" type="button"><i class="fa fa-twitter fa-fw"></i><span
-                    class="network-name">&nbsp;Twitter</span></button></a></li>
-            <li class="list-inline-item">&nbsp;<a href="https://www.instagram.com/{{template.instagram|safe}}/"
-                target=_blank><button class="btn-custom" type="button"><i class="fa fa-instagram fa-fw"></i><span
-                    class="network-name">&nbsp;Instagram </span></button></a></li>
-
+            {% for social in social%}
+            <li class="list-inline-item">&nbsp; <a href="{{social.s_link}}" target=_blank><button
+              class="btn-custom" type="button"><i class="fa fa-{{social.s_name}} fa-fw"></i><span
+                class="network-name">&nbsp;{{social.s_name}}</span></button></a></li>       
+                {% endfor %}         
           </ul>
+
         </div>
       </div>
     </div>
   </section>
   <div class="map-clean"></div>
   <footer>
-    <div class="container text-center">
+    <div class="container text-center">   
       <p>Copyright © ISTE-NITH 2022</p>
       <p>{{template.copyright_para|safe}}</p>
     </div>
   </footer>
 
+
   <!-- large modal -->
+  {% for terms in terms %}
   <div style="backdrop-filter: inherit;" class="modal fade" id="largeModal" tabindex="-1" role="dialog"
     aria-labelledby="basicModal" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content" style="">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">{{template.terms_conditions_title|safe}}</h4>
+          <h4 class="modal-title" id="myModalLabel">{{terms.tc_title|safe}}</h4>
           <button type="button" class="close" style="color: red;" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>{{template.terms_conditions_content|safe}}</p>
+          <p>{{terms.tc_content|safe}}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -517,6 +515,7 @@
       </div>
     </div>
   </div>
+  {% endfor %} 
 
 
   <script src="{% static 'assets/js/jquery.min.js' %}"></script>
@@ -545,6 +544,7 @@
     })();
 
   </script>
+ 
 
 </body>
 
