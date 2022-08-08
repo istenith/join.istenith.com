@@ -1,4 +1,6 @@
 from pyexpat import model
+from sre_parse import Verbose
+from tabnanny import verbose
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
@@ -57,12 +59,29 @@ class Template(models.Model):
     copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
     Registeration_Closed = models.BooleanField(default=False)
 
+    def __str__(self):
+        return "Content in page"
+
 
 class Terms_n_Condition(models.Model):
-    tc_title = models.CharField(max_length=1000, null=True, blank=True)
-    tc_content = models.CharField(max_length=1000, null=True, blank=True)
+    title = models.CharField(max_length=1000, null=True, blank=True)
+    content = models.CharField(max_length=1000, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Terms & Condition"
+        verbose_name_plural = "Terms & Conditions"
+
+    def __str__(self):
+        return "Terms and Conditions"
 
 
 class Social_Link(models.Model):
-    s_name = models.CharField(max_length=1000, null=True, blank=True)
-    s_link = models.CharField(max_length=1000, null=True, blank=True)
+    name = models.CharField(max_length=1000, null=True, blank=True)
+    link = models.CharField(max_length=1000, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Social Link"
+        verbose_name_plural = "Social Links"
+
+    def __str__(self):
+        return "{}".format(self.name)
