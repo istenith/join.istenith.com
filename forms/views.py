@@ -19,9 +19,21 @@ def index(request):
         form = RegisterationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return render(request, "success.html", {"template": template})
+            ctx = {"template": template, "social": social, "terms": terms}
+            return render(request, "success.html", ctx)
         else:
-            context = {"form": form, "template": template}
+            context = {
+                "form": form,
+                "template": template,
+                "social": social,
+                "terms": terms
+            }
             return render(request, "index.html", context)
     form = RegisterationForm()
-    return render(request, "index.html", {"form": form, "template": template, "social": social, "terms": terms})
+    ctx = {
+        "form": form,
+        "template": template,
+        "social": social,
+        "terms": terms
+    }
+    return render(request, "index.html", ctx)
