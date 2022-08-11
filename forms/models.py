@@ -70,6 +70,7 @@ class Template(models.Model):
                                       null=True,
                                       blank=True)
     Registeration_Closed = models.BooleanField(default=False)
+    show_results = models.BooleanField(default=False)
     Registeration_Closed_Message = models.CharField(max_length=10000000000,
                                                     blank=True,
                                                     null=True)
