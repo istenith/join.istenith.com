@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from forms.models import Registeration, Social_Link, Template, Terms_n_Condition
+from forms.models import Registeration, Social_Link, Template, Terms_n_Condition, FAQ
 # from forms.models import Downloads
 # from forms.models import Contact
 from django.utils.safestring import mark_safe
@@ -30,6 +30,7 @@ class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
             return '-'
 
 
+admin.site.register(FAQ)
 admin.site.register(Template)
 admin.site.register(Terms_n_Condition)
 admin.site.register(Social_Link)

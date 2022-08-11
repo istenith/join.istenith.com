@@ -101,3 +101,19 @@ class Social_Link(models.Model):
 
     def __str__(self):
         return "{}".format(self.name)
+
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=1000, null=True, blank=True)
+    answer = models.TextField(null=True, blank=True)
+    css_class_for_active_QNO = models.CharField(null=True,
+                                                blank=True,
+                                                max_length=40,
+                                                default='c-faq--active')
+
+    class Meta:
+        verbose_name = "FAQ"
+        verbose_name_plural = "FAQs"
+
+    def __str__(self):
+        return "{}".format(self.question)
