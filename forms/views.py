@@ -37,3 +37,6 @@ def index(request):
         "terms": terms
     }
     return render(request, "index.html", ctx)
+
+def result(request):
+    return render(request, "results.html")
