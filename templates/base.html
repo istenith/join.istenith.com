@@ -652,6 +652,20 @@
       </div>
     </div>
   </section>
+<!-- --FAQ-- -->
+  <div class="col-lg-8 mx-auto">
+    <h2 style="text-align: center;">frequently asked questions</h2>
+    <ul class="c-faqs">
+      <div class="container">
+        {% for faq in faq %}
+        <li class="c-faq {{faq.css_class_for_active_QNO}}">
+          <span class="c-faq__title">{{faq.question|safe}}</span>
+          <div class="c-faq__answer">{{faq.answer|safe}}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- /end c-faqs -->
+  </div>
   <section class="text-center content-section" id="contact">
     <div class="container">
       <div class="row">
@@ -670,20 +684,7 @@
       </div>
     </div>
   </section>
-  <!-- --FAQ-- -->
-  <div class="col-lg-8 mx-auto">
-    <h2 style="text-align: center;">frequently asked questions</h2>
-    <ul class="c-faqs">
-      <div class="container">
-        {% for faq in faq %}
-        <li class="c-faq {{faq.css_class_for_active_QNO}}">
-          <span class="c-faq__title">{{faq.question|safe}}</span>
-          <div class="c-faq__answer">{{faq.answer|safe}}</div>
-        </li>
-        {% endfor %}
-    </ul>
-    <!-- /end c-faqs -->
-  </div>
+  
 
 
 
