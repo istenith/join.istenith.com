@@ -12,13 +12,13 @@ class ResultPage(models.Model):
         verbose_name = "Result Page Content"
         verbose_name_plural = "Result Page"
 
-    def __str__(self):
-        return "{}".format(self.title)
+        def __str__(self):
+            return "{}".format(self.title)
 
 
 class Results(models.Model):
     BRANCH = (
-        ('', 'Choose Your Branch'),
+        ('', 'Choose Branch'),
         ("Civil Engineering", 'Civil Engineering'),
         ('Mechanical Engineering', 'Mechanical Engineering'),
         ('Electrical Engineering', 'Electrical Engineering'),
