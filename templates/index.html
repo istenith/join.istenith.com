@@ -8,6 +8,7 @@
             <div>
 {% endblock container %}
 {% block form %}
+{% for i in placeholder %}
     <div class="box">
         <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
             <input autocomplete="false" name="hidden" type="text" style="display:none;">
@@ -15,7 +16,7 @@
             <div class="inputBox">
                 <!-- <input type="text" name="name" required=""> -->
                 {{form.name}}
-                <label for="">Name</label>
+                <label for="">{{i.name_input|safe}}</label>
                 {% if form.name.errors %}
                     <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
                 {% endif %}
@@ -25,11 +26,11 @@
                     {% if form.email.errors %}
                         <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
                     {% endif %}
-                    <label for="">Email</label>
+                    <label for="">{{i.email_input|safe}}</label>
                         </div>
                         <div class="inputBox">
                             {{form.phone_number}}
-                            <label for="">Phone Number</label>
+                            <label for="">{{i.phone_number_input|safe}}</label>
                                 {% if form.phone_number.errors %}
                                     <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
                                 {% endif %}
@@ -43,7 +44,7 @@
                                         {{form.resume|attr:"class:input-file"|attr:"id:file"}}
                                         <label for="file" class="btn btn-tertiary js-labelFile">
                                             <i class="icon fa fa-upload"></i>
-                                            <span class="js-fileName"> Upload Your CV</span>
+                                            <span class="js-fileName">{{i.cv_upload_input|safe}}</span>
                                         </label>
                                         {% if form.resume.errors %}
                                             <div class="help-block" style="margin-top:0px; color: #ffe300;>{{ form.resume.errors }}</div>{% endif %}
@@ -61,5 +62,5 @@
         </div>
 
 
-        
+        {% endfor %} 
 {% endblock %}

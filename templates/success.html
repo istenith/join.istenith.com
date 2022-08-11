@@ -69,10 +69,7 @@
   </svg>
   <h1 class="success-message__title">Application Submitted successfully</h1>
   <div class="success-message__content">
-    <p style="font-size: 18px; font-weight: 600">
-      We will contact you as soon as possible regarding the interview. Fill
-      <a style="text-decoration: underline" href="/">another application.</a>
-    </p>
+    {{template.success_message|safe}} 
   </div>
 </div>
 <script>

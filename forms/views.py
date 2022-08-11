@@ -1,6 +1,6 @@
 from .forms import RegisterationForm
 from django.shortcuts import render
-from .models import FAQ, Template, Social_Link, Terms_n_Condition
+from .models import FAQ, FormPlaceholder, Template, Social_Link, Terms_n_Condition
 
 
 def error_404_view(request, exception):
@@ -15,6 +15,7 @@ def index(request):
     template = Template.objects.all()
     social = Social_Link.objects.all()
     terms = Terms_n_Condition.objects.all()
+    placeholder = FormPlaceholder.objects.all()
     faq = FAQ.objects.all()
     if request.method == "POST":
         form = RegisterationForm(request.POST, request.FILES)
@@ -29,6 +30,7 @@ def index(request):
             return render(request, "success.html", ctx)
         else:
             context = {
+                'placeholder': placeholder,
                 'faq': faq,
                 "form": form,
                 "template": template,
@@ -39,6 +41,7 @@ def index(request):
     form = RegisterationForm()
     ctx = {
         'faq': faq,
+        'placeholder': placeholder,
         "form": form,
         "template": template,
         "social": social,

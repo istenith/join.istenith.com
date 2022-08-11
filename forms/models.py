@@ -1,3 +1,4 @@
+from django.contrib.admin import ModelAdmin
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
@@ -31,7 +32,8 @@ class Registeration(models.Model):
         validators=[
             RegexValidator(
                 regex=r"^[2][1][b][a-z]{2}\d{3}@[nith.ac.in]*",
-                message="Only sophomores with college email addresses are authorised.")
+                message=
+                "Only sophomores with college email addresses are authorised.")
         ],
     )
     phone_number = PhoneNumberField(unique=True)
@@ -66,6 +68,9 @@ class Template(models.Model):
     copyright_para = models.CharField(max_length=10000000,
                                       null=True,
                                       blank=True)
+    success_message = models.CharField(max_length=10000000,
+                                       null=True,
+                                       blank=False)
     Registeration_Closed = models.BooleanField(default=False)
     show_results = models.BooleanField(default=False)
     Registeration_Closed_Message = models.CharField(max_length=10000000000,
@@ -114,3 +119,17 @@ class FAQ(models.Model):
 
     def __str__(self):
         return "{}".format(self.question)
+
+
+class FormPlaceholder(models.Model):
+    name_input = models.CharField(max_length=100)
+    email_input = models.CharField(max_length=100)
+    phone_number_input = models.CharField(max_length=100)
+    cv_upload_input = models.CharField(max_length=100)
+
+    def __str__(self):
+        return "INPUTS PLACEHOLDER"
+
+    class Meta:
+        verbose_name = "Form Placeholder"
+        verbose_name_plural = "Form Placeholders"
