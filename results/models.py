@@ -5,6 +5,7 @@ from django.db import models
 class ResultPage(models.Model):
     default = models.CharField(max_length=10, default='results')
     title = models.CharField(max_length=100000)
+    subtitle = models.CharField(blank=True, null=True, max_length=100000)
     show = models.BooleanField(default=False)
 
     class Meta:

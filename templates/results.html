@@ -66,6 +66,7 @@
       color: white;
     }
 
+
     th {
       padding-top: 12px;
       padding-bottom: 12px;
@@ -73,13 +74,28 @@
       background-color: #ff0060;
       color: white;
     }
+
+    .intro-text {
+      text-decoration: underline;
+      text-decoration-color: #ff0060
+    }
+
+    @media only screen and (min-width:768px) {
+      .intro-text {
+        margin-top: 20vh;
+        text-decoration: underline;
+        text-decoration-color: #ff0060
+      }
+    }
   </style>
   <header id="head" class="masthead">
     <div class="intro-body" id="container">
       <div class="container">
-        <h1 style="margin-top: 20vh; text-decoration: underline;  text-decoration-color: #ff0060;">ISTE INTERVIEW
-          RESULTS</h1>
-        <p>Congratulations to the selected members for Team ISTE</p>
+        {% for content in content %}
+        <h1 style="font-size: 40px;
+" class="intro-text">{{content.title}}</h1>
+        <p>{{content.subtitle|safe}}</p>
+        {% endfor %}
         <div class=" container">
           <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table">

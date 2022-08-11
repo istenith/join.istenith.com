@@ -6,8 +6,9 @@ from results.models import ResultPage, Results
 
 def result(request):
     value = ResultPage.objects.get(default='results')
+    content = ResultPage.objects.all()
     result = Results.objects.all()
-    ctx = {"result": result}
+    ctx = {"result": result, "content": content}
     if value.show:
         return render(request, 'results.html', ctx)
     else:
