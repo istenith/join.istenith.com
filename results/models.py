@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class ResultPage(models.Model):
     default = models.CharField(max_length=10, default='results')
     title = models.CharField(max_length=100000)

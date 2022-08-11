@@ -1,6 +1,3 @@
-from pyexpat import model
-from sre_parse import Verbose
-from tabnanny import verbose
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
@@ -34,7 +31,7 @@ class Registeration(models.Model):
         validators=[
             RegexValidator(
                 regex=r"^[2][1][b][a-z]{2}\d{3}@[nith.ac.in]*",
-                message="Kindly submit form with your college email only.")
+                message="Only sophomores with college email addresses are authorised.")
         ],
     )
     phone_number = PhoneNumberField(unique=True)
