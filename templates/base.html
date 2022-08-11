@@ -400,6 +400,178 @@
       font-family: Cabin, Helvetica Neue, Helvetica, Arial, sans-serif;
       color: #000;
     }
+
+    .c-faq__answer {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    /* body { */
+    /*   box-sizing: border-box; */
+    /*   font-family: "ABeeZee", sans-serif; */
+    /*   line-height: 1.48; */
+    /*   font-size: 16px; */
+    /*   color: #333; */
+    /* } */
+
+    /* body *, */
+    /* body *::after, */
+    /* body *::before { */
+    /*   box-sizing: inherit; */
+    /* } */
+
+    .container {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section__headline {
+      font-family: "Varela Round", sans-serif;
+      font-size: 62px;
+      font-weight: light;
+      color: #42dca3;
+      padding-left: 15px;
+      padding-top: 30px;
+    }
+
+    .c-faqs__headline {
+      font-family: "Varela Round", sans-serif;
+      text-align: left;
+      padding-left: 15px;
+      font-size: 1.5em;
+      margin-top: 1.5em;
+      font-weight: bold;
+    }
+
+    .c-faqs {
+      margin: 15px 0;
+      padding: 0 15px;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+    }
+
+    .c-faq {
+      font-family: "Varela Round", sans-serif;
+      list-style: none;
+      margin: 10px 0 5px;
+    }
+
+    .c-faq__title {
+      cursor: pointer;
+      font-weight: bolder;
+      background: #ffffff00;
+      z-index: 10;
+      position: relative;
+      font-size: 1.1em;
+    }
+
+    .c-faq__title:hover {
+      text-decoration: underline;
+      font-weight: bolder;
+    }
+
+    .c-faq__title::after {
+      white-space: nowrap;
+      font-weight: 300;
+      padding-left: 5px;
+      opacity: 0;
+      transform-origin: 11px;
+      transform: rotateZ(90deg);
+      display: none;
+      content: ">";
+    }
+
+    .c-faq--active .c-faq__title {
+      color: #42dca3;
+    }
+
+    .c-faq--active .c-faq__title::after {
+      opacity: 1;
+      transform: rotateZ(90deg);
+      display: inline-block;
+    }
+
+    .c-faq__answer {
+      font-weight: normal;
+      margin-top: -10%;
+      transition: all 0.1s;
+      z-index: 1;
+      font-size: 0.9em;
+      color: #505050;
+    }
+
+    .c-faq--active .c-faq__answer {
+      opacity: 1;
+      position: relative;
+      top: 0;
+      left: 0;
+      font-weight: 500;
+      color: white;
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+      border-radius: 3px;
+      border: 1px solid #f1f2f3;
+      border-top: 1px solid #42dca3;
+      padding: 20px;
+    }
+
+    @media (min-width: 780px) {
+      .c-faqs {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+      }
+
+      .c-faqs::before {
+        opacity: 0.2;
+      }
+
+      .c-faq {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      .c-faq .c-faq__title {
+        width: 50%;
+        padding-right: 40px;
+        display: inline-block;
+      }
+
+      .c-faq .c-faq__title::after {
+        display: none;
+      }
+
+      .c-faq .c-faq__answer {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50%;
+        width: 50%;
+        border-left-color: #42dca3;
+        border-top-color: #f1f2f3;
+      }
+    }
+
+    .c-note {
+      font-size: 0.8em;
+      padding-left: 15px;
+      opacity: 0.5;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .c-note:hover {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .c-note a {
+      color: #42dca3;
+    }
   </style>
 </head>
 
@@ -423,7 +595,8 @@
           {% if template.show_results == 0 %}
 
           {% else %}
-<li class="nav-item nav-link js-scroll-trigger"><a style="text-decoration: underline; text-decoration-color: #ff0060;" class="nav-link js-scroll-trigger"
+          <li class="nav-item nav-link js-scroll-trigger"><a
+              style="text-decoration: underline; text-decoration-color: #ff0060;" class="nav-link js-scroll-trigger"
               href="{% url 'results' %}">Result</a></li>
 
           {% endif %}
@@ -485,19 +658,36 @@
           <p>{{template.contact_para|safe}}</p>
           <ul class="list-inline banner-social-buttons">
             {% for social in social%}
-            <li class="list-inline-item">&nbsp; <a href="{{social.link}}" target=_blank><button
-              class="btn-custom" type="button"><i class="fa fa-{{social.name}} fa-fw"></i><span
-                class="network-name">&nbsp;{{social.name}}</span></button></a></li>       
-                {% endfor %}         
+            <li class="list-inline-item">&nbsp; <a href="{{social.link}}" target=_blank><button class="btn-custom"
+                  type="button"><i class="fa fa-{{social.name}} fa-fw"></i><span
+                    class="network-name">&nbsp;{{social.name}}</span></button></a></li>
+            {% endfor %}
           </ul>
 
         </div>
       </div>
     </div>
   </section>
+  <!-- --FAQ-- -->
+  <div class="col-lg-8 mx-auto">
+    <h2 style="text-align: center;">frequently asked questions</h2>
+    <ul class="c-faqs">
+      <div class="container">
+        {% for faq in faq %}
+        <li class="c-faq {{faq.css_class_for_active_QNO}}">
+          <span class="c-faq__title">{{faq.question|safe}}</span>
+          <div class="c-faq__answer">{{faq.answer|safe}}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- /end c-faqs -->
+  </div>
+
+
+
   <div class="map-clean"></div>
   <footer>
-    <div class="container text-center">   
+    <div class="container text-center">
       <p>Copyright © ISTE-NITH 2022</p>
       <p>{{template.copyright_para|safe}}</p>
     </div>
@@ -525,7 +715,7 @@
       </div>
     </div>
   </div>
-  {% endfor %} 
+  {% endfor %}
 
 
   <script src="{% static 'assets/js/jquery.min.js' %}"></script>
@@ -554,7 +744,13 @@
     })();
 
   </script>
- 
+  <script>
+    $('body').delegate('.c-faq', 'click', function () {
+      $('.c-faq').removeClass('c-faq--active');
+      $(this).addClass('c-faq--active');
+    });
+  </script>
+
 
 </body>
 
