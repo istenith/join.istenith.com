@@ -9,7 +9,7 @@
 {% endblock container %}
 {% block form %}
 {% for i in placeholder %}
-    <div class="box">
+    <div class="box" style="z-index:9999; backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);" >
         <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
             <input autocomplete="false" name="hidden" type="text" style="display:none;">
             {% csrf_token %}
