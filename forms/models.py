@@ -1,6 +1,7 @@
 from pyexpat import model
 from sre_parse import Verbose
 from tabnanny import verbose
+from unittest import result
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
@@ -58,6 +59,7 @@ class Template(models.Model):
     contact_para = models.CharField(max_length=10000000, null=True, blank=True)
     copyright_para = models.CharField(max_length=10000000, null=True, blank=True)
     Registeration_Closed = models.BooleanField(default=False)
+    Result_Time = models.BooleanField(default=False)
 
     def __str__(self):
         return "Content in page"
@@ -82,6 +84,19 @@ class Social_Link(models.Model):
     class Meta:
         verbose_name = "Social Link"
         verbose_name_plural = "Social Links"
+
+    def __str__(self):
+        return "{}".format(self.name)
+
+
+class Results(models.Model):
+    name = models.CharField(max_length=1000, null=True, blank=True)
+    rollno = models.CharField(max_length=1000, null=True, blank=True)
+    branch = models.CharField(max_length=1000, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Result"
+        verbose_name_plural = "Results"
 
     def __str__(self):
         return "{}".format(self.name)
