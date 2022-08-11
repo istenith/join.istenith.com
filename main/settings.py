@@ -35,6 +35,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 INSTALLED_APPS = [
     'forms',
+    'results',
     'phonenumber_field',
     'adminactions',
     'jazzmin',

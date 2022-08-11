@@ -436,7 +436,7 @@
         {% block form %}
         {% endblock form %}
         {% else %}
-        Registrations are closed for now.
+        {{template.Registeration_Closed_Message|safe}}
         {% endif %}
       </div>
     </div>

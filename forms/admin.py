@@ -1,6 +1,5 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from import_export.resources import Field, ModelResource
 from forms.models import Registeration, Social_Link, Template, Terms_n_Condition
 # from forms.models import Downloads
 # from forms.models import Contact
