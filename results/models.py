@@ -19,7 +19,7 @@ class ResultPage(models.Model):
 
 class Results(models.Model):
     BRANCH = (
-        ('', 'Choose Your Branch'),
+        ('', 'Choose Branch'),
         ("Civil Engineering", 'Civil Engineering'),
         ('Mechanical Engineering', 'Mechanical Engineering'),
         ('Electrical Engineering', 'Electrical Engineering'),
