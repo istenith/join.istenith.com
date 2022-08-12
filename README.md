@@ -14,7 +14,7 @@ For any system:
   python -m pip install Django
 ```
 
-For ArchLinux:
+For Archlinux:
 
 ```console
 sudo pacman -S python-django
