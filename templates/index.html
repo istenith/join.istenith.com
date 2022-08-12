@@ -50,7 +50,7 @@
                                             <div class="help-block" style="margin-top:0px; color: #ffe300;>{{ form.resume.errors }}</div>{% endif %}
                                         </div>
                                         <div class=" tacbox">
-                                            {{form.terms_confirmed}}
+                                            {{form.terms_confirmed|attr:'required'}}
                                             <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #00ffa1;" >Terms and Conditions</a>.</label>
                                                 {% if form.terms_confirmed.errors %}
                                                     <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.terms_confirmed.errors }}</div>
