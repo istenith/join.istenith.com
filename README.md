@@ -10,13 +10,13 @@ This website is using django backend. All you need to do is to go through https:
 
 For any system:
 
-```console
+```bash
   python -m pip install Django
 ```
 
 For Archlinux:
 
-```console
+```bash
 sudo pacman -S python-django
 ```
 
