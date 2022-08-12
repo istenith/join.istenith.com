@@ -20,8 +20,10 @@ class Registeration(models.Model):
         ('Electrical Engineering', 'Electrical Engineering'),
         ('Electronics And Communication Engineering',
          'Electronics And Communication Engineering'),
+        ('ECE Dual', 'ECE Dual'),
         ('Chemical Engineering', 'Chemical Engineering'),
         ('Computer Science Engineering', 'Computer Science Engineering'),
+        ('CSE Dual', 'CSE Dual'),
         ('Material Science', 'Material Science'),
         ('Engineering Physics', 'Engineering Physics'),
         ('Mathematics And Computing', 'Mathematics And Computing'),
@@ -31,7 +33,7 @@ class Registeration(models.Model):
         unique=True,
         validators=[
             RegexValidator(
-                regex=r"^[2][1][b][a-z]{2}\d{3}@[nith.ac.in]*",
+                regex=r"^[2][1][a-z]{3}\d{3}@[nith.ac.in]*",
                 message=
                 "Only sophomores with college email addresses are authorised.")
         ],
