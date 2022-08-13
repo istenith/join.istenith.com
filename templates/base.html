@@ -2,6 +2,7 @@
 {% load static %}
 {% for template in template %}
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -125,7 +126,7 @@
     .box {
       position: absolute;
       /* top: 50%; */
-      margin-top: 27vh;
+      margin-top: 236px;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 560px;
@@ -226,6 +227,19 @@
         padding-top: 0px;
         margin-top: 260px;
         width: 100%;
+      }
+    }
+
+    @media(max-width: 390px) {
+      .box {
+        padding-top: 0px;
+        margin-top: 295px;
+        width: 100%;
+      }
+
+      .row {
+        height: 500px;
+        margin-top: -80px;
       }
     }
 
