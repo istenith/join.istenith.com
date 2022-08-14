@@ -48,7 +48,8 @@ class Registeration(models.Model):
         ],
         blank=False,
         null=False)
-    terms_confirmed = models.BooleanField(default=False,
+    terms_confirmed = models.BooleanField(null=False,
+                                          blank=False,
                                           verbose_name="Terms & Conditions")
 
     def __str__(self):
