@@ -7,6 +7,9 @@ from django.utils.safestring import mark_safe
 # from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.admin import site
 import adminactions.actions as actions
+from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin
+from solo.admin import SingletonModelAdmin
 
 # register all adminactions
 actions.add_to_site(site,
@@ -30,10 +33,17 @@ class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
             return '-'
 
 
+class UserAdmin(ImportExportModelAdmin, UserAdmin):
+    list_display = ('username', 'first_name', 'email')
+    search_fields = ('email', 'first_name')
+
+
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
 admin.site.register(FAQ)
-admin.site.register(FormPlaceholder)
-admin.site.register(Template)
-admin.site.register(Terms_n_Condition)
+admin.site.register(FormPlaceholder, SingletonModelAdmin)
+admin.site.register(Template, SingletonModelAdmin)
+admin.site.register(Terms_n_Condition, SingletonModelAdmin)
 admin.site.register(Social_Link)
 
 admin.site.register(Registeration, RegAdmin)

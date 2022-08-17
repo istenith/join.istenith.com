@@ -48,3 +48,11 @@ def index(request):
         "terms": terms
     }
     return render(request, "index.html", ctx)
+
+
+def filedownload(request, filename):
+    zf = zipfile.ZipFile('download.zip', 'w', zipfile.ZIP_DEFLATED)
+    zf.write("media/" + filename)
+    response = HttpResponse(zf, content_type='application/force-download')
+    response['Content-Disposition'] = 'attachment; filename="download.zip"'
+    return response

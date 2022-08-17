@@ -23,6 +23,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 INSTALLED_APPS = [
     'forms',
+    'solo',
     'results',
     'phonenumber_field',
     'adminactions',
@@ -138,7 +139,7 @@ JAZZMIN_SETTINGS = {
     "site_header": "join.istenith.com",
     # Title on the brand (19 chars max) (will default to current_admin_site.site_header)
     "site_brand": "ISTE-NITH'22",
-    "welcome_sign": "Welcome to the admin panel of the respective w`ebsite",
+    "welcome_sign": "Welcome to the admin dashboard. Login to take incharge.",
     # Copyright on the footer
     "copyright": "ISTE-NITH",
     "changeform_format": "horizontal_tabs",

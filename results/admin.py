@@ -1,10 +1,11 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
+from solo.admin import SingletonModelAdmin
 from results.models import ResultPage, Results
 # Register your models here.
 
 
-class ResultAdmin(admin.ModelAdmin):
+class ResultAdmin(SingletonModelAdmin):
     readonly_fields = ['default']
 
 

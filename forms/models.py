@@ -1,4 +1,5 @@
 from django.contrib.admin import ModelAdmin
+from solo.models import SingletonModel
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
 from django.db import models
@@ -56,7 +57,7 @@ class Registeration(models.Model):
         return "{} - {} - {}".format(self.name, self.email, self.phone_number)
 
 
-class Template(models.Model):
+class Template(SingletonModel):
     brand_heading = models.CharField(max_length=1000, null=True, blank=True)
     intro_text = models.CharField(max_length=100000000, null=True, blank=True)
     about_para = models.CharField(max_length=100000000, null=True, blank=True)
@@ -84,7 +85,7 @@ class Template(models.Model):
         return "Content in page"
 
 
-class Terms_n_Condition(models.Model):
+class Terms_n_Condition(SingletonModel):
     title = models.CharField(max_length=1000, null=True, blank=True)
     content = models.CharField(max_length=1000, null=True, blank=True)
 
@@ -124,7 +125,7 @@ class FAQ(models.Model):
         return "{}".format(self.question)
 
 
-class FormPlaceholder(models.Model):
+class FormPlaceholder(SingletonModel):
     name_input = models.CharField(max_length=100)
     email_input = models.CharField(max_length=100)
     phone_number_input = models.CharField(max_length=100)

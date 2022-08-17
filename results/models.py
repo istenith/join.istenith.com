@@ -1,9 +1,10 @@
 from django.db import models
+from solo.models import SingletonModel
 
 # Create your models here.
 
 
-class ResultPage(models.Model):
+class ResultPage(SingletonModel):
     default = models.CharField(max_length=10, default='results')
     title = models.CharField(max_length=100000)
     subtitle = models.CharField(blank=True, null=True, max_length=100000)
