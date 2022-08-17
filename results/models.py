@@ -20,7 +20,7 @@ class ResultPage(SingletonModel):
 
 class Results(models.Model):
     BRANCH = (
-        ('', 'Choose Your Branch'),
+        ('', 'Choose Branch'),
         ("Civil Engineering", 'Civil Engineering'),
         ('Mechanical Engineering', 'Mechanical Engineering'),
         ('Electrical Engineering', 'Electrical Engineering'),
