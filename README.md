@@ -22,43 +22,43 @@ sudo pacman -S python-django
 
 2. Clone the repository:
 
-```console
+```bash
 git clone https://github.com/istenith/join.istenith.com.git
 ```
 
 3. Change the directory to join.istenith.com using:
 
-```console
+```bash
 cd join.istenith.com
 ```
 
 4. Create a virtual environment:
 
-```console
+```bash
 pip install virtualenv
 virtualenv venv
 ```
 
 5. Activate the virtual environment
 
-```console
+```bash
 source venv/bin/activate
 ```
 
 6. Now install all the packages which are being used in this project:
 
-```console
+```bash
 pip install -r requirements.txt
 ```
 
 7. Migrate all the database
 
-```console
+```bash
 python manage.py migrate
 ```
 
 8. Now run the development server:
 
-```console
+```bash
 python manage.py runserver
 ```
