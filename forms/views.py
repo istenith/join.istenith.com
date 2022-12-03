@@ -1,6 +1,8 @@
 from .forms import RegisterationForm
 from django.shortcuts import render
 from .models import FAQ, FormPlaceholder, Template, Social_Link, Terms_n_Condition
+from django.http import HttpResponse, HttpResponseRedirect
+
 
 
 def error_404_view(request, exception):
@@ -47,6 +49,7 @@ def index(request):
         "social": social,
         "terms": terms
     }
+
     return render(request, "index.html", ctx)
 
 
