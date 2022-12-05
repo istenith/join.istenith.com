@@ -32,11 +32,12 @@ def index(request):
                 'faq': faq,
             }
             emailTemplate= render_to_string('email_template.html')
+            to_email = form.cleaned_data.get('email')  
             sendEmail= EmailMessage(
               'subject',
                emailTemplate,
                settings.EMAIL_HOST_USER,
-               ['swastkk@gmail.com']
+               [to_email]
             )
             sendEmail.fail_silently= False
             sendEmail.send()
