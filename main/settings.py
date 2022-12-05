@@ -161,6 +161,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # SMTP setup
 EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_PORT= 587
-EMAIL_HOST_USER= 'swastkk@gmail.com'
-EMAIL_HOST_PASSWORD= 'mvtbeafpptaxdwbs'
+EMAIL_HOST_USER= '' #email istenith@gmail.com or iste@nith.ac.in
+EMAIL_HOST_PASSWORD= '' #email password 
 EMAIL_USE_TLS= True
