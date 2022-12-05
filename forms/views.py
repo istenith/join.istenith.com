@@ -34,7 +34,7 @@ def index(request):
             emailTemplate= render_to_string('email_template.html')
             to_email = form.cleaned_data.get('email')  
             sendEmail= EmailMessage(
-              'subject',
+              'Confirmation of registration for ISTE-interviews',
                emailTemplate,
                settings.EMAIL_HOST_USER,
                [to_email]
