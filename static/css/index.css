@@ -47,7 +47,7 @@ nav .navbar-nav  li a:after {
   height: 1px;
   content: '.';
   color: transparent;
-  background: rgb(228, 228, 228);
+  background: #4dddfc   ;
   visibility: none;
   opacity: 0;
   z-index: -1;
