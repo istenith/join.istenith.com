@@ -43,40 +43,40 @@
                               <!-- <input type="text" name="name" required=""> -->
                                {{form.name}}
                            <label for="">Your Skills</label>
-                              {% if form.name.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% if form.skills.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.skills.errors }}</div>
                               {% endif %}
                         </div>
                        <div class="inputBox">
                               <!-- <input type="text" name="name" required=""> -->
                                {{form.name}}
                            <label for="">Your Strengths</label>
-                              {% if form.name.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% if form.strength.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.strength.errors }}</div>
                               {% endif %}
                          </div>
                        <div class="inputBox">
                               <!-- <input type="text" name="name" required=""> -->
-                               {{form.name}}
+                               {{form.weakness}}
                            <label for="">Your Weaknesses</label>
-                              {% if form.name.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% if form.weakness.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.weakness.errors }}</div>
                               {% endif %}
                         </div>
                        <div class="inputBox">
                               <!-- <input type="text" name="name" required=""> -->
                                {{form.why_join_iste}}
-                           <label for="">WHy do you want to join ISTE?</label>
+                           <label for="">Why do you want to join ISTE?</label>
                               {% if form.why_join.iste.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.why_join_iste.errors }}</div>
                               {% endif %}
                         </div>
                        <div class="inputBox">
                               <!-- <input type="text" name="name" required=""> -->
                                {{form.expect_from_iste}}
-                           <label for="">What ISTE expects from you?</label>
-                              {% if form.why_join_iste.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                           <label for="">Why should ISTE choose you?</label>
+                              {% if form.expect_from_iste.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.expect_from_iste.errors }}</div>
                               {% endif %}
                         </div>
 
