@@ -1,4 +1,6 @@
 from django.contrib.admin import ModelAdmin
+from django.conf import settings
+from django.core.files.storage import FileSystemStorage
 from solo.models import SingletonModel
 from django.core.validators import FileExtensionValidator
 from django.core.validators import RegexValidator
@@ -14,6 +16,7 @@ def file_size(value):  # add this to some file where you can import it from
 
 
 class Registeration(models.Model):
+
     BRANCH = (
         ('', 'Choose Your Branch'),
         ("Civil Engineering", 'Civil Engineering'),
@@ -36,13 +39,16 @@ class Registeration(models.Model):
             RegexValidator(
                 regex=r'^[2][2][a-zA-Z]{3}\d{3}@nith[.]ac[.]in$',
                 message=
-                "Only freshers with correct college email addresses are authorised.")
+                "Only freshers with correct college email addresses are authorised."
+            )
         ],
     )
     phone_number = PhoneNumberField(unique=True)
     branch = models.CharField(choices=BRANCH, max_length=100, default='')
     resume = models.FileField(
+        storage=FileSystemStorage(location=settings.MEDIA_ROOT),
         upload_to='resumes/',
+        default='resumes/resume.pdf',
         validators=[
             file_size,
             FileExtensionValidator(allowed_extensions=["pdf", "docx"])
@@ -50,15 +56,21 @@ class Registeration(models.Model):
         blank=True,
         null=True)
     weakness = models.CharField(max_length=200, verbose_name="Weakness")
-    strength = models.CharField(max_length=200, verbose_name="Strengths",blank=True)
-    skills = models.CharField(max_length=200, verbose_name="Skills", blank=True)
-    why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?", null=True)
+    strength = models.CharField(max_length=200,
+                                verbose_name="Strengths",
+                                blank=True)
+    skills = models.CharField(max_length=200,
+                              verbose_name="Skills",
+                              blank=True)
+    why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?",
+                                     null=True)
     expect_from_iste = models.TextField(
         null=True, verbose_name="What do you want from ISTE?")
     terms_confirmed = models.BooleanField(verbose_name="Terms & Conditions")
 
     def __str__(self):
         return "{} - {} - {}".format(self.name, self.email, self.phone_number)
+
 
 
 class Template(SingletonModel):
