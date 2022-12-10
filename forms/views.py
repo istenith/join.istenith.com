@@ -1,10 +1,6 @@
 from .forms import RegisterationForm
 from django.shortcuts import render
 from .models import FAQ, FormPlaceholder, Template, Social_Link, Terms_n_Condition
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.mail import EmailMessage
-from django.conf import settings
-from django.template.loader import render_to_string 
 
 
 def error_404_view(request, exception):
@@ -31,16 +27,13 @@ def index(request):
                 "terms": terms,
                 'faq': faq,
             }
-            emailTemplate= render_to_string('email_template.html')
-            to_email = form.cleaned_data.get('email')  
-            sendEmail= EmailMessage(
-              'Confirmation of registration for ISTE-interviews',
-               emailTemplate,
-               settings.EMAIL_HOST_USER,
-               [to_email]
-            )
-            sendEmail.fail_silently= False
-            sendEmail.send()
+            # emailTemplate = render_to_string('email_template.html')
+            # to_email = form.cleaned_data.get('email')
+            # sendEmail = EmailMessage(
+            #     'Confirmation of registration for ISTE-interviews',
+            #     emailTemplate, settings.EMAIL_HOST_USER, [to_email])
+            # sendEmail.fail_silently = False
+            # sendEmail.send()
             return render(request, "success.html", ctx)
         else:
             context = {
@@ -51,7 +44,7 @@ def index(request):
                 "social": social,
                 "terms": terms
             }
-            return render(request, "index.html", context)
+            return render(request, "forms/forms.html", context)
     form = RegisterationForm()
     ctx = {
         'faq': faq,
@@ -62,7 +55,7 @@ def index(request):
         "terms": terms
     }
 
-    return render(request, "index.html", ctx)
+    return render(request, "forms/forms.html", ctx)
 
 
 def filedownload(request, filename):

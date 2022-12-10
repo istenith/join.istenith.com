@@ -22,10 +22,10 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
     'forms',
     'solo',
     'results',
+    'material',
     'phonenumber_field',
     'adminactions',
     'jazzmin',
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -159,8 +158,8 @@ JAZZMIN_SETTINGS = {
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # SMTP setup
-EMAIL_HOST= 'smtp.gmail.com'
-EMAIL_PORT= 587
-EMAIL_HOST_USER= ''  #email id to be filled
-EMAIL_HOST_PASSWORD= '' # password for same email id!
-EMAIL_USE_TLS= True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ''  #email id to be filled
+EMAIL_HOST_PASSWORD = ''  # password for same email id!
+EMAIL_USE_TLS = True

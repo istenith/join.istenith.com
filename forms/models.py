@@ -29,24 +29,46 @@ class Registeration(models.Model):
         ('Engineering Physics', 'Engineering Physics'),
         ('Mathematics And Computing', 'Mathematics And Computing'),
     )
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, verbose_name="Name")
+    roll_no = models.CharField(
+        max_length=50,
+        null=True,
+        validators=[
+            RegexValidator(
+                regex=r'^[2][2][a-zA-Z]{3}\d{3}$',
+                message=
+                "Only freshers with correct college email addresses are authorised."
+            )
+        ],
+        verbose_name="Roll Number")
     email = models.EmailField(
         unique=True,
         validators=[
             RegexValidator(
                 regex=r'^[2][2][a-zA-Z]{3}\d{3}@nith[.]ac[.]in$',
                 message=
-                "Only freshers with correct college email addresses are authorised.")
+                "Only freshers with correct college email addresses are authorised."
+            )
         ],
-    )
-    phone_number = PhoneNumberField(unique=True)
-    branch = models.CharField(choices=BRANCH, max_length=100, default='')
+        verbose_name="Email")
+    phone_number = PhoneNumberField(unique=True, verbose_name="Phone Number")
+    branch = models.CharField(choices=BRANCH,
+                              max_length=100,
+                              default='',
+                              verbose_name="Branches")
+    weakness = models.CharField(max_length=90, verbose_name="Weakness")
+    strength = models.CharField(max_length=90, verbose_name="Strengths")
+    skills = models.CharField(max_length=90, verbose_name="Skills")
+    why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?")
+    expect_from_iste = models.TextField(
+        blank=True, verbose_name="What do you want from ISTE?")
     resume = models.FileField(
         upload_to='resumes/',
         validators=[
             file_size,
-            FileExtensionValidator(allowed_extensions=["pdf"])
+            FileExtensionValidator(allowed_extensions=["pdf", "docx"])
         ],
+        verbose_name="Resume",
         blank=False,
         null=False)
     terms_confirmed = models.BooleanField(null=False,
