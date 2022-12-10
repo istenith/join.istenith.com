@@ -45,13 +45,17 @@ class Registeration(models.Model):
         upload_to='resumes/',
         validators=[
             file_size,
-            FileExtensionValidator(allowed_extensions=["pdf"])
+            FileExtensionValidator(allowed_extensions=["pdf", "docx"])
         ],
-        blank=False,
-        null=False)
-    terms_confirmed = models.BooleanField(null=False,
-                                          blank=False,
-                                          verbose_name="Terms & Conditions")
+        blank=True,
+        null=True)
+    weakness = models.CharField(max_length=90, verbose_name="Weakness")
+    strength = models.CharField(max_length=90, verbose_name="Strengths")
+    skills = models.CharField(max_length=90, verbose_name="Skills")
+    why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?")
+    expect_from_iste = models.TextField(
+        blank=True, verbose_name="What do you want from ISTE?")
+    terms_confirmed = models.BooleanField(verbose_name="Terms & Conditions")
 
     def __str__(self):
         return "{} - {} - {}".format(self.name, self.email, self.phone_number)

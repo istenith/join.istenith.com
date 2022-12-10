@@ -39,6 +39,49 @@
                                     {% if form.branch.errors %}
                                         <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;>{{ form.branch.errors }}</div>
                                     {% endif %}
+                        <div class="inputBox">
+                              <!-- <input type="text" name="name" required=""> -->
+                               {{form.name}}
+                           <label for="">Your Skills</label>
+                              {% if form.name.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% endif %}
+                        </div>
+                       <div class="inputBox">
+                              <!-- <input type="text" name="name" required=""> -->
+                               {{form.name}}
+                           <label for="">Your Strengths</label>
+                              {% if form.name.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% endif %}
+                         </div>
+                       <div class="inputBox">
+                              <!-- <input type="text" name="name" required=""> -->
+                               {{form.name}}
+                           <label for="">Your Weaknesses</label>
+                              {% if form.name.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% endif %}
+                        </div>
+                       <div class="inputBox">
+                              <!-- <input type="text" name="name" required=""> -->
+                               {{form.why_join_iste}}
+                           <label for="">WHy do you want to join ISTE?</label>
+                              {% if form.why_join.iste.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% endif %}
+                        </div>
+                       <div class="inputBox">
+                              <!-- <input type="text" name="name" required=""> -->
+                               {{form.expect_from_iste}}
+                           <label for="">What ISTE expects from you?</label>
+                              {% if form.why_join_iste.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                              {% endif %}
+                        </div>
+
+
+
                                     <div class=" form-group">
                                         <!-- <input type="file" class="input-file" id="file"> -->
                                         {{form.resume|attr:"class:input-file"|attr:"id:file"}}
