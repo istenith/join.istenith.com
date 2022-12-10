@@ -52,9 +52,9 @@ class Registeration(models.Model):
     weakness = models.CharField(max_length=200, verbose_name="Weakness")
     strength = models.CharField(max_length=200, verbose_name="Strengths",blank=True)
     skills = models.CharField(max_length=200, verbose_name="Skills", blank=True)
-    why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?", blank=True)
+    why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?", null=True)
     expect_from_iste = models.TextField(
-        blank=True, verbose_name="What do you want from ISTE?")
+        null=True, verbose_name="What do you want from ISTE?")
     terms_confirmed = models.BooleanField(verbose_name="Terms & Conditions")
 
     def __str__(self):

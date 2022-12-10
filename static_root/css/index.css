@@ -1,21 +1,21 @@
 #download{
-  background-image: url('../images/nith-sp.jpeg');
+  background-image: url('../images/nith-road.jpeg');
   background-image: linear-gradient(
       to bottom,
       rgb(0 0 0 / 35%) 0%,
       rgb(0 0 0) 104%
     ),
-    url("../images/nith-sp.jpeg");
+    url("../images/nith-road.jpeg");
 }
 
 #head{
-background-image: url("../images/nith-sp.jpeg");
+background-image: url("../images/nith-road.jpeg");
     background-image: linear-gradient(
       to bottom,
       rgb(0 0 0 / 35%) 0%,
       rgb(0 0 0) 100%
     ),
-    url("../images/nith-sp.jpeg");
+    url("../images/nith-road.jpeg");
 }
 
 
@@ -47,7 +47,7 @@ nav .navbar-nav  li a:after {
   height: 1px;
   content: '.';
   color: transparent;
-  background: rgb(228, 228, 228);
+  background: #4dddfc   ;
   visibility: none;
   opacity: 0;
   z-index: -1;
