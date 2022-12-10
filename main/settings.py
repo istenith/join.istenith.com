@@ -19,8 +19,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://join.istenith.com',
     'http://join.istenith.com',
     'http://127.0.0.1:8000/',
-    'https://interview-iste.azurewebsites.net/',
-    'http://interview-iste.azurewebsites.net/'
+    'https://interview-iste.azurewebsites.net',
+    'http://interview-iste.azurewebsites.net'
 ]
 
 INSTALLED_APPS = [
