@@ -63,18 +63,21 @@
                                   <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.weakness.errors }}</div>
                               {% endif %}
                         </div>
+                        
                        <div class="inputBox">
+                        <h5 style="margin: 1rem 0 0.8rem;">Why do you want to join ISTE?</h5>
                               <!-- <input type="text" name="name" required=""> -->
                                {{form.why_join_iste}}
-                           <label for="">Why do you want to join ISTE?</label>
+                            
+                           <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
                               {% if form.why_join.iste.errors %}
                                   <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.why_join_iste.errors }}</div>
                               {% endif %}
                         </div>
                        <div class="inputBox">
                               <!-- <input type="text" name="name" required=""> -->
+                              <h5 style="margin: 1rem 0 0.8rem;">Why should ISTE choose you?</h5>
                                {{form.expect_from_iste}}
-                           <label for="">Why should ISTE choose you?</label>
                               {% if form.expect_from_iste.errors %}
                                   <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.expect_from_iste.errors }}</div>
                               {% endif %}
