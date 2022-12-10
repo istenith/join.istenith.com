@@ -16,9 +16,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://isteinterview.azurewebsites.net/',
     'https://join.istenith.com',
     'http://join.istenith.com',
+    'https://interview-iste.azurewebsites.net/'
 ]
 
 INSTALLED_APPS = [
