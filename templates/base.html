@@ -10,13 +10,8 @@
   <link rel="icon" type="image/x-icon" href="{% static 'images/iste-logo-blue.png' %}">
   <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-  <link rel="stylesheet" href="{% static 'css/form.css' %}">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
-  {% comment %}
-{% include 'material/includes/material_css.html' %}
-{% include 'material/includes/material_js.html' %}
-  {% endcomment %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
   <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
   <style>
@@ -642,14 +637,8 @@
         {% block success %}
         {% endblock success %}
         <br>
-
-        {% block form_new %}
-        {% endblock form_new %}
-        {% comment %}
-        This is in Index.html -> form container.
         {% block form %}
         {% endblock form %}
-        {% endcomment %}
         {% else %}
         {{template.Registeration_Closed_Message|safe}}
         {% endif %}
@@ -759,7 +748,8 @@
   <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <script src="{% static 'assets/js/grayscale.js' %}"></script>
-  <script src="{% static 'js/forms.js' %}"></script>
+  {% comment %}
+  <script src="{% static 'js/index.js' %}"></script> {% endcomment %}
   <script>
     (function () {
 
