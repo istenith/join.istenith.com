@@ -31,16 +31,16 @@ def index(request):
                 "terms": terms,
                 'faq': faq,
             }
-            emailTemplate= render_to_string('email_template.html')
-            to_email = form.cleaned_data.get('email')  
-            sendEmail= EmailMessage(
-              'Confirmation of registration for ISTE-interviews',
-               emailTemplate,
-               settings.EMAIL_HOST_USER,
-               [to_email]
-            )
-            sendEmail.fail_silently= False
-            sendEmail.send()
+          #  emailTemplate= render_to_string('email_template.html')
+          #  to_email = form.cleaned_data.get('email')  
+          #  sendEmail= EmailMessage(
+           #   'Confirmation of registration for ISTE-interviews',
+            #   emailTemplate,
+             #  settings.EMAIL_HOST_USER,
+              # [to_email]
+           # )
+           # sendEmail.fail_silently= False
+           # sendEmail.send()
             return render(request, "success.html", ctx)
         else:
             context = {
