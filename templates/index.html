@@ -8,5 +8,59 @@
             <div>
 {% endblock container %}
 {% block form %}
+{% for i in placeholder %}
+    <div class="box" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);" >
+        <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+            <input autocomplete="false" name="hidden" type="text" style="display:none;">
+            {% csrf_token %}
+            <div class="inputBox">
+                <!-- <input type="text" name="name" required=""> -->
+                {{form.name}}
+                <label for="">{{i.name_input|safe}}</label>
+                {% if form.name.errors %}
+                    <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                {% endif %}
+                </div>
+                <div class=" inputBox">
+                    {{form.email}}
+                    {% if form.email.errors %}
+                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
+                    {% endif %}
+                    <label for="">{{i.email_input|safe}}</label>
+                        </div>
+                        <div class="inputBox">
+                            {{form.phone_number}}
+                            <label for="">{{i.phone_number_input|safe}}</label>
+                                {% if form.phone_number.errors %}
+                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
+                                {% endif %}
+                                </div>
+                                {{form.branch|attr:"class:branch"}}
+                                    {% if form.branch.errors %}
+                                        <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;>{{ form.branch.errors }}</div>
+                                    {% endif %}
+                                    <div class=" form-group">
+                                        <!-- <input type="file" class="input-file" id="file"> -->
+                                        {{form.resume|attr:"class:input-file"|attr:"id:file"}}
+                                        <label for="file" class="btn btn-tertiary js-labelFile">
+                                            <i class="icon fa fa-upload"></i>
+                                            <span class="js-fileName">{{i.cv_upload_input|safe}}</span>
+                                        </label>
+                                        {% if form.resume.errors %}
+                                            <div class="help-block" style="margin-top:0px; color: #ffe300;>{{ form.resume.errors }}</div>{% endif %}
+                                        </div>
+                                        <div class=" tacbox">
+                                            {{form.terms_confirmed|attr:'required'}}
+                                            <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
+                                                {% if form.terms_confirmed.errors %}
+                                                    <div class="help-block" style="margin-top:-9px; color: #ffe300;>{{ form.terms_confirmed.errors }}</div>
+                                                {% endif %}
 
+                                            </div>
+                                    <input type="submit" name="" value="Submit">
+                                </form>
+        </div>
+
+
+        {% endfor %} 
 {% endblock %}
