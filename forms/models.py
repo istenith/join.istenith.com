@@ -57,11 +57,9 @@ class Registeration(models.Model):
         null=True)
     weakness = models.CharField(max_length=200, verbose_name="Weakness")
     strength = models.CharField(max_length=200,
-                                verbose_name="Strengths",
-                                blank=True)
+                                verbose_name="Strengths")
     skills = models.CharField(max_length=200,
-                              verbose_name="Skills",
-                              blank=True)
+                              verbose_name="Skills",)
     why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?",
                                      null=True)
     expect_from_iste = models.TextField(
