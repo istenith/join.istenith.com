@@ -48,7 +48,6 @@ class Registeration(models.Model):
     resume = models.FileField(
         storage=FileSystemStorage(location=settings.MEDIA_ROOT),
         upload_to='resumes/',
-        default='resumes/resume.pdf',
         validators=[
             file_size,
             FileExtensionValidator(allowed_extensions=["pdf", "docx"])
@@ -56,10 +55,11 @@ class Registeration(models.Model):
         blank=True,
         null=True)
     weakness = models.CharField(max_length=200, verbose_name="Weakness")
-    strength = models.CharField(max_length=200,
-                                verbose_name="Strengths")
-    skills = models.CharField(max_length=200,
-                              verbose_name="Skills",)
+    strength = models.CharField(max_length=200, verbose_name="Strengths")
+    skills = models.CharField(
+        max_length=200,
+        verbose_name="Skills",
+    )
     why_join_iste = models.TextField(verbose_name="Why you want to join ISTE?",
                                      null=True)
     expect_from_iste = models.TextField(
@@ -68,7 +68,6 @@ class Registeration(models.Model):
 
     def __str__(self):
         return "{} - {} - {}".format(self.name, self.email, self.phone_number)
-
 
 
 class Template(SingletonModel):

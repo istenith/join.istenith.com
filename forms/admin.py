@@ -21,16 +21,17 @@ actions.add_to_site(site,
 
 class RegAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('name', 'email', 'branch', 'phone_number',
-                    'terms_confirmed', 'resume_url')
+                    'terms_confirmed')
     search_fields = ('name', 'email', 'branch', 'phone_number')
 
-    def resume_url(self, instance):
-        resume = instance.resume.url
-        if resume:
-            return mark_safe('<a target="_blank" href="%s">Resume Link</a>' %
-                             (resume))
-        else:
-            return '-'
+# if Resume field is required then you can go with this function otherwise for not-required field, it is not advisable to use
+    # def resume_url(self, instance):
+    #     resume = instance.resume.url
+    #     if resume:
+    #         return mark_safe('<a target="_blank" href="%s">Resume Link</a>' %
+    #                          (resume))
+    #     else:
+    #         return '-'
 
 
 class UserAdmin(ImportExportModelAdmin, UserAdmin):
