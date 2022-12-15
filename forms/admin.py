@@ -46,5 +46,4 @@ admin.site.register(FormPlaceholder, SingletonModelAdmin)
 admin.site.register(Template, SingletonModelAdmin)
 admin.site.register(Terms_n_Condition, SingletonModelAdmin)
 admin.site.register(Social_Link)
-
 admin.site.register(Registeration, RegAdmin)
