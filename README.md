@@ -1,5 +1,5 @@
 <p align='center'>
-<img width="200" src="static/images/logo.png" alt="ISTE KA LOGO">
+<img width="200" src="static/logo.png" alt="ISTE">
 </p>
 <h1 align='center'>INTERVIEWS WEBSITE'22</h1>
 This website is using django backend. All you need to do is to go through https://docs.djangoproject.com/ so that you get the basic knowledge that how things are working in django.
@@ -56,8 +56,11 @@ pip install -r requirements.txt
 ```bash
 python manage.py migrate
 ```
-
-8. Now run the development server:
+8. Load the static files
+```bash
+python manage.py collectstatic
+```
+10. Now run the development server:
 
 ```bash
 python manage.py runserver
