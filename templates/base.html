@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% for template in template %}
 <html>
 
 <head>
@@ -10,8 +9,7 @@
   <link rel="icon" type="image/x-icon" href="{% static 'images/iste-logo-blue.png' %}">
   <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
   <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
   <style>
@@ -643,17 +641,19 @@
   <header id="head" class="masthead">
     <div class="intro-body" id="container">
       <div class="container">
-        {% if template.Registeration_Closed == 0 %}
-        {% block container %}
-        {% endblock container %}
-        {% block success %}
-        {% endblock success %}
-        <br>
-        {% block form %}
-        {% endblock form %}
-        {% else %}
-        {{template.Registeration_Closed_Message|safe}}
-        {% endif %}
+        {% for template in template %}
+         {% if template.Registeration_Closed == 0 %}
+         {% block container %}
+         {% endblock container %}
+         {% block success %}
+         {% endblock success %}
+         <br>
+         {% block form %}
+         {% endblock form %}
+         {% else %}
+         {{template.Registeration_Closed_Message|safe}}
+         {% endif %}
+        {% endfor %}
       </div>
     </div>
     </div>
@@ -793,4 +793,3 @@
 </body>
 
 </html>
-{% endfor %}
