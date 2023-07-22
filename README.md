@@ -60,7 +60,7 @@ python manage.py migrate
 ```bash
 python manage.py collectstatic
 ```
-10. Now run the development server:
+9. Now run the development server:
 
 ```bash
 python manage.py runserver
