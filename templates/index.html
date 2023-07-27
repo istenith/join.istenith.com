@@ -18,7 +18,7 @@
                 {{form.name}}
                 <label for="">{{i.name_input|safe}}</label>
                 {% if form.name.errors %}
-                    <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.name.errors }}</div>
+                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
                 {% endif %}
                 </div>
                 <div class=" inputBox">
@@ -37,27 +37,27 @@
                                 </div>
                                 {{form.branch|attr:"class:branch"}}
                                     {% if form.branch.errors %}
-                                        <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;>{{ form.branch.errors }}</div>
+                                        <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;">{{ form.branch.errors }}</div>
                                     {% endif %}
                         <div class="inputBox">
                                {{form.skills}}
                            <label for="">Your Skills</label>
                               {% if form.skills.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.skills.errors }}</div>
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
                               {% endif %}
                         </div>
                        <div class="inputBox">
                                {{form.strength}}
                            <label for="">Your Strengths</label>
                               {% if form.strength.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.strength.errors }}</div>
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
                               {% endif %}
                          </div>
                        <div class="inputBox">
                                {{form.weakness}}
                            <label for="">Your Weaknesses</label>
                               {% if form.weakness.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.weakness.errors }}</div>
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
                               {% endif %}
                         </div>
                         
@@ -68,7 +68,7 @@
                             
                            <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
                               {% if form.why_join.iste.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.why_join_iste.errors }}</div>
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.why_join_iste.errors }}</div>
                               {% endif %}
                         </div>
                        <div class="inputBox">
@@ -76,7 +76,7 @@
                               <h5 style="margin: 1rem 0 0.8rem;">Why should ISTE choose you?</h5>
                                {{form.expect_from_iste}}
                               {% if form.expect_from_iste.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;>{{ form.expect_from_iste.errors }}</div>
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.expect_from_iste.errors }}</div>
                               {% endif %}
                         </div>
 
@@ -92,13 +92,13 @@
                                         </label>
                                         <p style="color:#D33434;">(Optional)</p>
                                         {% if form.resume.errors %}
-                                            <div class="help-block" style="margin-top:0px; color: #ffe300;>{{ form.resume.errors }}</div>{% endif %}
+                                            <div class="help-block" style="margin-top:0px; color: #ffe300;">{{ form.resume.errors }}</div>{% endif %}
                                         </div>
                                         <div class=" tacbox">
                                             {{form.terms_confirmed|attr:'required'}}
                                             <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
                                                 {% if form.terms_confirmed.errors %}
-                                                    <div class="help-block" style="margin-top:-9px; color: #ffe300;>{{ form.terms_confirmed.errors }}</div>
+                                                    <div class="help-block" style="margin-top:-9px; color: #ffe300;">{{ form.terms_confirmed.errors }}</div>
                                                 {% endif %}
 
                                             </div>

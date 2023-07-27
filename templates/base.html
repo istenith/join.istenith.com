@@ -626,6 +626,7 @@
               href="#download">Download</a></li>
           <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger"
               href="#contact">Contact</a></li>
+          {% for template in template %}
           {% if template.show_results == 0 %}
 
           {% else %}
@@ -634,6 +635,7 @@
               href="{% url 'results' %}">Result</a></li>
 
           {% endif %}
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -653,7 +655,6 @@
          {% else %}
          {{template.Registeration_Closed_Message|safe}}
          {% endif %}
-        {% endfor %}
       </div>
     </div>
     </div>
@@ -730,6 +731,7 @@
       <p>{{template.copyright_para|safe}}</p>
     </div>
   </footer>
+  {% endfor %}
 
 
   <!-- large modal -->
