@@ -28,33 +28,33 @@
                     {% endif %}
                     <label for="">{{i.email_input|safe}}</label>
                         </div>
-                        <div class="inputBox">
-                            {{form.phone_number}}
-                            <label for="">{{i.phone_number_input|safe}}</label>
-                                {% if form.phone_number.errors %}
-                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
-                                {% endif %}
-                                </div>
-                                {{form.branch|attr:"class:branch"}}
-                                    {% if form.branch.errors %}
-                                        <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;">{{ form.branch.errors }}</div>
-                                    {% endif %}
-                        <div class="inputBox">
-                               {{form.skills}}
-                           <label for="">Your Skills</label>
-                              {% if form.skills.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
-                              {% endif %}
-                        </div>
-                       <div class="inputBox">
-                               {{form.strength}}
-                           <label for="">Your Strengths</label>
-                              {% if form.strength.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
-                              {% endif %}
-                         </div>
-                       <div class="inputBox">
-                               {{form.weakness}}
+                <div class="inputBox">
+                    {{form.phone_number}}
+                    <label for="">{{i.phone_number_input|safe}}</label>
+                    {% if form.phone_number.errors %}
+                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
+                    {% endif %}
+                </div>
+                    {{form.branch|attr:"class:branch"}}
+                        {% if form.branch.errors %}
+                            <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;">{{ form.branch.errors }}</div>
+                        {% endif %}
+                <div class="inputBox">
+                    {{form.skills}}
+                    <label for="">Your Skills</label>
+                    {% if form.skills.errors %}
+                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="inputBox">
+                    {{form.strength}}
+                    <label for="">Your Strengths</label>
+                        {% if form.strength.errors %}
+                            <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
+                        {% endif %}
+                </div>
+                <div class="inputBox">
+                    {{form.weakness}}
                            <label for="">Your Weaknesses</label>
                               {% if form.weakness.errors %}
                                   <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
