@@ -10,101 +10,143 @@
 {% block form %}
 {% for i in placeholder %}
     <div class="box" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);" >
-        <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
-            <input autocomplete="false" name="hidden" type="text" style="display:none;">
-            {% csrf_token %}
-            <div class="inputBox">
-                <!-- <input type="text" name="name" required=""> -->
-                {{form.name}}
-                <label for="">{{i.name_input|safe}}</label>
-                {% if form.name.errors %}
-                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
-                {% endif %}
-                </div>
-                <div class=" inputBox">
-                    {{form.email}}
-                    {% if form.email.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
-                    {% endif %}
-                    <label for="">{{i.email_input|safe}}</label>
+        <section class="section">
+                <div class="form-progress">
+                <progress class="form-progress-bar" min="0" max="100" value="0" step="33" aria-labelledby="form-progress-completion"></progress>
+                
+                <div class="form-progress-indicator one active"></div>
+                <div class="form-progress-indicator two"></div>
+                <div class="form-progress-indicator three"></div>
+                <div class="form-progress-indicator four"></div>
+                
+                <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0% complete</p>
+            </div>
+            
+            
+            <div class="animation-container">
+                <!-- Step one -->
+                <div class="form-step js-form-step" data-step="1">
+        
+                    <p>Please fill out the fields below so we can learn some information about you</p>
+        
+                    <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+                        <div class="fieldgroup">
+                            <input type="text" name="firstName" id="firstName" />
+                            <label for="firstName">Name</label>
                         </div>
-                <div class="inputBox">
-                    {{form.phone_number}}
-                    <label for="">{{i.phone_number_input|safe}}</label>
-                    {% if form.phone_number.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
-                    {% endif %}
-                </div>
-                    {{form.branch|attr:"class:branch"}}
-                        {% if form.branch.errors %}
-                            <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;">{{ form.branch.errors }}</div>
-                        {% endif %}
-                <div class="inputBox">
-                    {{form.skills}}
-                    <label for="">Your Skills</label>
-                    {% if form.skills.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
-                    {% endif %}
-                </div>
-                <div class="inputBox">
-                    {{form.strength}}
-                    <label for="">Your Strengths</label>
-                        {% if form.strength.errors %}
-                            <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
-                        {% endif %}
-                </div>
-                <div class="inputBox">
-                    {{form.weakness}}
-                           <label for="">Your Weaknesses</label>
-                              {% if form.weakness.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
-                              {% endif %}
+        
+                        <div class="fieldgroup">
+                            <input type="text" name="email" id="email" />
+                            <label for="lastName">Email</label>
                         </div>
-                        
-                       <div class="inputBox">
-                        <h5 style="margin: 1rem 0 0.8rem;">Why do you want to join ISTE?</h5>
-                              <!-- <input type="text" name="name" required=""> -->
-                               {{form.why_join_iste}}
+        
+                        <div class="fieldgroup">
+                            <input type="text" name="email" id="phoneNumber" />
+                            <label for="email">Phone Number</label>
+                        </div>
+        
+                        <div class="fieldgroup">
+                            <input type="text" name="postalCode" id="postalCode" />
+                            <label for="postalCode">Branch</label>
+                        </div>
+        
+                        <div class="buttons">
+                                    <button type="button" class="btn btn-alt js-reset">Reset</button>
+        
+                                <button type="submit" class="btn">Continue</button>
+                        </div>
+                    </form>
+        
+                </div>
+                
+                    <!-- Step two -->
+                    <div class="form-step js-form-step waiting hidden" data-step="2">
+        
+                        <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
+                                <br> Please fill in the token below with yesterday's date plus the timestamp from the day of your birth (expressed as an integer) to the power of fourteen divided by two.</p>
+        
+                        <form action="" name="form-step-2">
+                                <div class="fieldgroup">
+                                        <input type="text" name="token" id="token" />
+                                        <label for="token">Skills</label>
+                                </div>
+                                <div class="fieldgroup">
+                                    <input type="text" name="token" id="token" />
+                                    <label for="token">Strengths</label>
+                                </div>
+                                <div class="fieldgroup">
+                                    <input type="text" name="token" id="token" />
+                                    <label for="token">Weaknesses</label>
+                                </div>
+        
+                                <div class="buttons">
+                                        <button type="button" class="btn btn-alt js-reset">Reset</button>
+        
+                                        <button type="submit" class="btn">Continue</button>
+                                </div>
+                        </form>
+        
+                </div>
+                
+                
+                
+                            <!-- Step three -->
+                    <div class="form-step js-form-step waiting hidden" data-step="3">
+        
+                        <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
+                                <br> Please tell us your credit card information. We promise not to store it or use it to buy a new iPhone in the App Store.</p>
+        
+                        <form action="" name="form-step-3">
                             
-                           <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
-                              {% if form.why_join.iste.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.why_join_iste.errors }}</div>
-                              {% endif %}
-                        </div>
-                       <div class="inputBox">
-                              <!-- <input type="text" name="name" required=""> -->
-                              <h5 style="margin: 1rem 0 0.8rem;">Why should ISTE choose you?</h5>
-                               {{form.expect_from_iste}}
-                              {% if form.expect_from_iste.errors %}
-                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.expect_from_iste.errors }}</div>
-                              {% endif %}
-                        </div>
+                                <div class="fieldgroup">
+                                        <input type="text" name="credit-card-expiry" id="credit-card-expiry" />
+                                        <label for="credit-card-expiry">Why do you want to join ISTE?</label>
+                                </div>
+                                <div class="fieldgroup">
+                                    <input type="text" name="credit-card-expiry" id="credit-card-expiry" />
+                                    <label for="credit-card-expiry">Why should ISTE choose you?</label>
+                                </div>
+        
+                                <div class="buttons">
+                                        <button type="button" class="btn btn-alt js-reset">Reset</button>
+        
+                                        <button type="submit" class="btn">Continue</button>
+                                </div>
+                        </form>
+        
+                </div>
+                
+                
+                
+                <!-- Step four -->
+                    <div class="form-step js-form-step waiting hidden" data-step="4">
+        
+                        <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
+                                <br> Finally, please just write the words "I Agree" in the field below to consent to us using the previous data you entered to buy a new iPhone.</p>
+        
+                        <form action="" name="form-step-4">
+                                <div class="fieldgroup">
+                                        <input type="text" name="agreen" id="agreen" />
+                                        <label for="agreen">Upload CV!</label>
+                                </div>
+                                <div class=" tacbox">
+                                    {{form.terms_confirmed|attr:'required'}}
+                                    <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
+                                        {% if form.terms_confirmed.errors %}
+                                            <div class="help-block" style="margin-top:-9px; color: #ffe300;">{{ form.terms_confirmed.errors }}</div>
+                                        {% endif %}
 
-
-                        <br>
-                        
-                                    <div class=" form-group">
-                                        {{form.resume|attr:"class:input-file"|attr:"id:file"}}
-
-                                        <label for="file" class="btn btn-tertiary js-labelFile">
-                                            <i class="icon fa fa-upload"></i>
-                                            <span class="js-fileName">{{i.cv_upload_input|safe}}</span>
-                                        </label>
-                                        <p style="color:#D33434;">(Optional)</p>
-                                        {% if form.resume.errors %}
-                                            <div class="help-block" style="margin-top:0px; color: #ffe300;">{{ form.resume.errors }}</div>{% endif %}
-                                        </div>
-                                        <div class=" tacbox">
-                                            {{form.terms_confirmed|attr:'required'}}
-                                            <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
-                                                {% if form.terms_confirmed.errors %}
-                                                    <div class="help-block" style="margin-top:-9px; color: #ffe300;">{{ form.terms_confirmed.errors }}</div>
-                                                {% endif %}
-
-                                            </div>
+                                    </div>
+        
+                                <div class="buttons">
                                     <input type="submit" name="" value="Submit">
-                                </form>
-        </div>
+                                </div>
+                        </form>
+        
+                </div>
+            </div>
+        </section>
+    </div>
 
 
         {% endfor %} 
