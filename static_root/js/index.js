@@ -1,15 +1,12 @@
 var $input;
 
-function validate_email() {
-  var userEmail = document.getElementById("id_email").value;
-  var emailStart = userEmail.substring(0, 2);
-  var regx = /21/;
-  if (regx.test(emailStart)) {
-    alert("wohoo chl pada!");
-  } else {
-    alert("email dekh ke daal bhay");
-  }
-}
+// function validate_email() {
+//   var userEmail = document.getElementById("id_email").value;
+//   var emailStart = userEmail.substring(0, 2);
+//   var regx = /21/;
+//   if (regx.test(emailStart)) {
+//   } else {
+//   }
 
 function onInputFocus(event) {
   var $target = $(event.target);

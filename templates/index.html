@@ -13,18 +13,15 @@
 {% block form %}
 {% for i in placeholder %}
 <div class="box" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);">
-  <form action="{% url 'index' %} method="post">
+  <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-          <div class="col-12 col-md-11 col-lg-10 col-xl-9">
-            <div class="card card0 border-0">
-              <div class="row">
+          <div class="">
+            <div>
                 <div>
-                  <div class="card card00 m-2 border-0">
+                  <div>
                     <div class="row text-center justify-content-center px-3">
                       <p class="prev text-danger"><span class="fa fa-long-arrow-left"> Go Back</span></p id="back">
-                      <h3 class="mt-4">Simple Registration</h3>
+                      <h3 class="mt-4">Registration</h3>
                     </div>
                     <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
                       <div class="col-md-6">
@@ -44,74 +41,59 @@
                       <div class="col-md-6">
                         <div class="card2 first-screen show ml-2">
                           
-                          <div class="row px-3 mt-4">
+                          <div class="row px-3 mt-4 inputBox">
                             <div class="form-group mt-1 mb-1"> {{form.name}} <label class="ml-3 form-control-placeholder" for="email">{{i.name_input|safe}}</label>
                             {% if form.name.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
                             {% endif %}
                          </div>
-                         <div class="row px-3 mt-4">
+                         <div class="row px-3 mt-4 inputBox">
                             <div class="form-group mt-1 mb-1"> {{form.email}} <label class="ml-3 form-control-placeholder" for="email">{{i.email_input|safe}}</label>
                             {% if form.email.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
                             {% endif %}
                          </div>
-                         <div class="row px-3 mt-4">
+                         <div class="row px-3 mt-4 inputBox">
                             <div class="form-group mt-1 mb-1">  {{form.phone_number}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
                             {% if form.phone_number.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
                             {% endif %}
                          </div>
-                         <div class="row px-3 mt-4">
-                            <div class="form-group mt-1 mb-1">   {{form.branch|attr:"class:branch"}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
+                         <div class="row px-3 mt-4 inputBox">
+                            <div class="form-group mt-1 mb-1">
+                            {{form.branch|attr:"class:branch"}}
                             {% if form.branch.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.branch.errors }}</div>
                             {% endif %}
                          </div>
                                                
-                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
-                          </div>
-                          <div class="row px-3 mt-1 mb-5">
-                            <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input"> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
+                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
                           </div>
                         </div>
                         <div class="card2 ml-2">
-                          <div class="row px-3 mt-3">
+                          <div class="row px-3 mt-3 inputBox">
                             <div class="form-group mt-1 mb-1">  {{form.skills}} <label class="ml-3 form-control-placeholder" for="pwd">Your Skills</label>
                             {% if form.skills.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
                             {% endif %} 
                         </div>
-                        <div class="row px-3 mt-3">
+                        <div class="row px-3 mt-3 inputBox">
                             <div class="form-group mt-1 mb-1">  {{form.strength}} <label class="ml-3 form-control-placeholder" for="pwd">Your Strengths</label>
                             {% if form.strength.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
                             {% endif %} 
                         </div>
-                        <div class="row px-3 mt-3">
+                        <div class="row px-3 mt-3 inputBox">
                             <div class="form-group mt-1 mb-1">  {{form.weakness}} <label class="ml-3 form-control-placeholder" for="pwd">Your Weaknesses</label>
                             {% if form.weakness.errors %}
                                 <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
                             {% endif %} 
                         </div>
-                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
-                          </div>
-                          <div class="row mt-3 mb-5">
-                            <div class="col-12">
-                              <p class="mb-1">Password must contain</p>
-                              <div class="row">
-                                <div class="col-6"><span class="fa fa-circle text-danger"></span> lower case</div>
-                                <div class="col-6"><span class="fa fa-circle text-danger"></span> numbers</div>
-                              </div>
-                              <div class="row">
-                                <div class="col-6"><span class="fa fa-circle text-danger"></span> upper case</div>
-                                <div class="col-6"><span class="fa fa-circle text-danger"></span> 8-16 characters</div>
-                              </div>
-                            </div>
+                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
                           </div>
                         </div>
                         <div class="card2 ml-2">
-                          <div class="row px-3 mt-3">
+                          <div class="row px-3 mt-3 inputBox">
                             <h5 style="margin: 1rem 0 0.8rem;">Why do you want to join ISTE?</h5>
                             {{form.why_join_iste}} <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
                             {% if form.why_join.iste.errors %}
@@ -122,7 +104,7 @@
                             {% if form.expect_from_iste.errors %}
                              <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.expect_from_iste.errors }}</div>
                             {% endif %}
-                            <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                            <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
                           </div>
                         </div>
                         <div class="card2 ml-2">
@@ -159,8 +141,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </form>
 </div>
 {% endfor %}
