@@ -13,185 +13,103 @@
 {% block form %}
 {% for i in placeholder %}
 <div class="box" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);">
-    <section class="section">
-        <div class="form-progress">
-            <progress class="form-progress-bar" min="0" max="100" value="0" step="33"
-                aria-labelledby="form-progress-completion"></progress>
-
-            <div class="form-progress-indicator one active"></div>
-            <div class="form-progress-indicator two"></div>
-            <div class="form-progress-indicator three"></div>
-            <div class="form-progress-indicator four"></div>
-
-            <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0% complete
-            </p>
-        </div>
-
-        <div class="animation-container">
-            <!-- Step one -->
-            <div class="form-step js-form-step" data-step="1">
-
-                <p>Please fill out the fields below so we can learn some information about you</p>
-
-                <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
-                    {% csrf_token %}
-                    <div class="fieldgroup">
-                        <label for="firstName">{{i.name_input|safe}}</label>
-                        {{ form.name }}
-                        {% if form.name.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
-                        {% endif %}
+    <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+            <div class="card card0 border-0">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card card00 m-2 border-0">
+                    <div class="row text-center justify-content-center px-3">
+                      <p class="prev text-danger"><span class="fa fa-long-arrow-left"> Go Back</span></p id="back">
+                      <h3 class="mt-4">Simple Registration</h3>
                     </div>
-
-                    <div class="fieldgroup">
-                        <label for="lastName">{{i.email_input|safe}}</label>
-                        {{ form.email }}
-                        {% if form.email.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
-                        {% endif %}
-                    </div>
-
-                    <div class="fieldgroup">
-                        <label for="email">{{i.phone_number_input|safe}}</label>
-                        {{ form.phone_number }}
-                        {% if form.phone_number.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}
+                    <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
+                      <div class="col-md-6">
+                        <div class="card1">
+                          <ul id="progressbar" class="text-center">
+                            <li class="active step0"></li>
+                            <li class="step0"></li>
+                            <li class="step0"></li>
+                            <li class="step0"></li>
+                          </ul>
+                          <h6 class="mb-5">Enter your Email</h6>
+                          <h6 class="mb-5">Set password</h6>
+                          <h6 class="mb-5">Select your country</h6>
                         </div>
-                        {% endif %}
-                    </div>
-
-                    <div class="fieldgroup">
-                        {{ form.branch }}
-                        {% if form.branch.errors %}
-                        <div class="help-block" style="margin-top:-20px; margin-bottom: 10px; color: #ffe300;">
-                            {{ form.branch.errors }}</div>
-                        {% endif %}
-                    </div>
-
-                    <div class="buttons">
-                        <button type="button" class="btn btn-alt js-reset">Reset</button>
-
-                        <button type="submit" class="btn">Continue</button>
-                    </div>
-                </form>
-
-            </div>
-
-            <!-- Step two -->
-            <div class="form-step js-form-step waiting hidden" data-step="2">
-
-                <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
-                    <br> Please fill in the token below with yesterday's date plus the timestamp from the day of your
-                    birth (expressed as an integer) to the power of fourteen divided by two.</p>
-
-                <form action="{% url 'index' %}" name="form-step-2" method="post">
-                    {% csrf_token %}
-                    <div class="fieldgroup">
-                        <label for="token">Your Skills</label>
-                        {{ form.skills }}
-                        {% if form.skills.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
-                        {% endif %}
-                    </div>
-                    <div class="fieldgroup">
-                        <label for="token">Your Strengths</label>
-                        {{ form.strength }}
-                        {% if form.strength.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
-                        {% endif %}
-                    </div>
-                    <div class="fieldgroup">
-                        <label for="token">Your Weaknesses</label>
-                        {{ form.weakness }}
-                        {% if form.weakness.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card2 first-screen show ml-2">
+                          <div class="row text-center px-3 mr-2">
+                            <div class="mb-2 col-2"> <span class="fa fa-reddit social"></span> </div>
+                            <div class="mb-2 col-2"> <span class="fa fa-facebook social"></span> </div>
+                            <div class="mb-2 col-2"> <span class="fa fa-linkedin social"></span> </div>
+                            <div class="mb-2 col-2"> <span class="fa fa-google-plus social"></span> </div>
+                            <div class="mb-2 col-2"> <span class="fa fa-twitter social"></span> </div>
+                            <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
+                          </div>
+                          <div class="row px-3 mt-4">
+                            <div class="form-group mt-1 mb-1"> <input type="text" id="email" class="form-control" required> <label class="ml-3 form-control-placeholder" for="email">Email</label> </div>
+                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                          </div>
+                          <div class="row px-3 mt-1 mb-5">
+                            <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input"> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
+                          </div>
                         </div>
-                        {% endif %}
+                        <div class="card2 ml-2">
+                          <div class="row px-3 mt-3">
+                            <div class="form-group mt-1 mb-1"> <input type="password" id="pwd" class="form-control" required> <label class="ml-3 form-control-placeholder" for="pwd">Password</label> </div>
+                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                          </div>
+                          <div class="row mt-3 mb-5">
+                            <div class="col-12">
+                              <p class="mb-1">Password must contain</p>
+                              <div class="row">
+                                <div class="col-6"><span class="fa fa-circle text-danger"></span> lower case</div>
+                                <div class="col-6"><span class="fa fa-circle text-danger"></span> numbers</div>
+                              </div>
+                              <div class="row">
+                                <div class="col-6"><span class="fa fa-circle text-danger"></span> upper case</div>
+                                <div class="col-6"><span class="fa fa-circle text-danger"></span> 8-16 characters</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card2 ml-2">
+                          <div class="row px-3 mt-3">
+                            <p class="mb-0 w-100">Select your Country</p>
+                            <div class="form-group mt-3 mb-4">
+                              <div class="select mb-3"> <select name="account" class="form-control custom-select">
+                                  <option>India</option>
+                                  <option>USA</option>
+                                  <option>Germany</option>
+                                  <option>Mexico</option>
+                                </select> </div>
+                            </div>
+                            <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                          </div>
+                        </div>
+                        <div class="card2 ml-2">
+                          <div class="row px-3 mt-2 mb-4 text-center">
+                            <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
+                            <div class="col-12 text-center"><img class="tick" src="https://i.imgur.com/WDI0da4.gif"></div>
+                            <h6 class="col-12 mt-2"><i>...Enjoy COOKIES...</i></h6>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-
-                    <div class="buttons">
-                        <button type="button" class="btn btn-alt js-reset">Reset</button>
-
-                        <button type="submit" class="btn">Continue</button>
+                  </div>
+                  <div class="col-12">
+                    <div class="row px-3">
+                      <h2 class="text-muted get-bonus mt-4 mb-5">Get Bonus <span class="text-danger">666</span> cookies</h2> <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png">
                     </div>
-                </form>
-
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <!-- Step three -->
-            <div class="form-step js-form-step waiting hidden" data-step="3">
-
-                <p class="form-instructions"><strong>Click the continue button to show form progression.</strong>
-                    <br> Please tell us your credit card information. We promise not to store it or use it to buy a new
-                    iPhone in the App Store.</p>
-
-                <form action="{% url 'index' %}" name="form-step-3" method="post">
-                    {% csrf_token %}
-                    <div class="fieldgroup">
-                        <label for="credit-card-expiry">Why do you want to join ISTE?</label>
-                        {{ form.why_join_iste }}
-                        {% if form.why_join_iste.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">
-                            {{ form.why_join_iste.errors }}</div>
-                        {% endif %}
-                    </div>
-                    <div class="fieldgroup">
-                        <label for="credit-card-expiry">Why should ISTE choose you?</label>
-                        {{ form.expect_from_iste }}
-                        {% if form.expect_from_iste.errors %}
-                        <div class="help-block" style="margin-top:-27px; color: #ffe300;">
-                            {{ form.expect_from_iste.errors }}</div>
-                        {% endif %}
-                    </div>
-
-                    <div class="buttons">
-                        <button type="button" class="btn btn-alt js-reset">Reset</button>
-
-                        <button type="submit" class="btn">Continue</button>
-                    </div>
-                </form>
-
-            </div>
-
-            <!-- Step four -->
-            <div class="form-step js-form-step waiting hidden" data-step="4">
-
-                <p class="form-instructions"><strong>Click the continue button to show form progression.</strong></p>
-
-                <form action="{% url 'index' %}" name="form-step-4" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}                    
-                    <div class="form-group">
-                        <label for="file" class="btn btn-tertiary js-labelFile">
-                            <i class="icon fa fa-upload"></i>
-                            <span class="js-fileName">{{ i.cv_upload_input|safe }}</span>
-                        </label>
-                        {{ form.resume }}
-                        <p style="color:#D33434;">(Optional)</p>
-                        {% if form.resume.errors %}
-                        <div class="help-block" style="margin-top:0px; color: #ffe300;">{{ form.resume.errors }}</div>
-                        {% endif %}
-                    </div>
-                    <div class="tacbox">
-                        {{ form.terms_confirmed }}
-                        <label for="checkbox"> I agree to these <a href="#" data-toggle="modal"
-                                data-target="#largeModal" style="color: #4dddfc;">Terms and Conditions</a>.</label>
-                        {% if form.terms_confirmed.errors %}
-                        <div class="help-block" style="margin-top:-9px; color: #ffe300;">
-                            {{ form.terms_confirmed.errors }}</div>
-                        {% endif %}
-                    </div>
-
-                    <div class="buttons">
-                        <!-- <button type="button" class="btn btn-alt js-reset">Reset</button> -->
-
-                        <button type="submit" class="btn">Submit</button>
-
-                    </div>
-                </form>
-
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
 </div>
 {% endfor %}
 {% endblock %}
