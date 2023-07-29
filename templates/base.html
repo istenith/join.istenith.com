@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
   <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/form.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
   <style>
     @import url(https://fonts.googleapis.com/css?family=Lobster);
 
@@ -129,7 +128,7 @@
       margin-top: 400px;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 560px;
+      width: 900px;
       padding: 40px;
       background: rgba(0, 0, 0, .0);
       box-sizing: border-box;
@@ -608,6 +607,253 @@
     textarea{
       width:100%
     }
+
+    /* lessgo CSS for the form */
+    .card0 {
+    /* background-color: #F5F5F5; */
+    border-radius: 8px;
+    z-index: 0
+}
+
+.card00 {
+    z-index: 0
+}
+
+.card1 {
+    margin-left: 140px;
+    z-index: 0;
+    border-right: 1px solid #F5F5F5
+}
+
+.card2 {
+    display: none
+}
+
+.card2.show {
+    display: block
+}
+
+.social {
+    border-radius: 50%;
+    background-color: #d31629;
+    color: #E53935;
+    height: 47px;
+    width: 47px;
+    padding-top: 16px;
+    cursor: pointer
+}
+
+/* input,
+select {
+    padding: 2px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    color: #9E9E9E;
+    border: 1px solid #BDBDBD;
+    font-size: 16px;
+    letter-spacing: 1px;
+    height: 50px !important
+} */
+
+/* select {
+    width: 100%;
+    margin-bottom: 85px
+} */
+/* 
+input:focus,
+select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #E53935 !important;
+    outline-width: 0 !important
+} */
+
+/* .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #E53935
+} */
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 77%
+}
+
+.form-control-placeholder {
+    position: absolute;
+    top: 0px;
+    padding: 12px 2px 0 2px;
+    transition: all 300ms;
+    opacity: 0.5
+}
+
+.form-control:focus+.form-control-placeholder,
+.form-control:valid+.form-control-placeholder {
+    font-size: 95%;
+    top: 10px;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    /* background-color: #fff */
+}
+
+.next-button {
+    width: 77%;
+    height: 50px;
+    background-color: #00FFCA;
+    color: #000000;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 0 !important;
+}
+
+.next-button:hover {
+    background-color: #E53935;
+    color: #fff
+}
+
+.get-bonus {
+    margin-left: 154px
+}
+
+.pic {
+    width: 230px;
+    height: 110px
+}
+
+#progressbar {
+    position: absolute;
+    left: 35px;
+    overflow: hidden;
+    color: #E53935
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 8px;
+    font-weight: 400;
+    margin-bottom: 36px
+}
+
+#progressbar li:nth-child(3) {
+    margin-bottom: 88px
+}
+
+#progressbar .step0:before {
+    content: "";
+    color: #fff
+}
+
+#progressbar li:before {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 20px;
+    background: #ed8888;
+    border: 2px solid #E53935;
+    border-radius: 50%;
+    margin: auto
+}
+
+#progressbar li:last-child:before {
+    width: 40px;
+    height: 40px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 3px;
+    height: 66px;
+    background: #BDBDBD;
+    position: absolute;
+    left: 58px;
+    top: 15px;
+    z-index: -1
+}
+
+#progressbar li:last-child:after {
+    top: 147px;
+    height: 132px
+}
+
+#progressbar li:nth-child(3):after {
+    top: 81px
+}
+
+#progressbar li:nth-child(2):after {
+    top: 0px
+}
+
+#progressbar li:first-child:after {
+    position: absolute;
+    top: -81px
+}
+
+#progressbar li.active:after {
+    background: #E53935
+}
+
+#progressbar li.active:before {
+    background: #E53935;
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+.tick {
+    width: 100px;
+    height: 100px
+}
+
+.prev {
+    display: block;
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    cursor: pointer
+}
+
+.prev:hover {
+    color: #D50000 !important
+}
+
+@media screen and (max-width: 912px) {
+    .card00 {
+        padding-top: 30px
+    }
+
+    .card1 {
+        border: none;
+        margin-left: 50px
+    }
+
+    .card2 {
+        border-bottom: 1px solid #F5F5F5;
+        margin-bottom: 25px
+    }
+
+    .social {
+        height: 30px;
+        width: 30px;
+        font-size: 15px;
+        padding-top: 8px;
+        margin-top: 7px
+    }
+
+    .get-bonus {
+        margin-top: 40px !important;
+        margin-left: 75px
+    }
+
+    #progressbar {
+        left: -25px
+    }
+}
+
+
+
+
+
   </style>
 </head>
 
@@ -792,7 +1038,80 @@
       $(this).addClass('c-faq--active');
     });
   </script>
-  <script src="{% static 'js/form.js'%}"></script>
+  <!-- <script src="{% static 'js/form.js'%}"></script> -->
+  <script>
+    // JS for form
+    $(document).ready(function(){
+
+var current_fs, next_fs, previous_fs;
+
+// No BACK button on first screen
+if($(".show").hasClass("first-screen")) {
+$(".prev").css({ 'display' : 'none' });
+}
+
+// Next button
+$(".next-button").click(function(){
+
+current_fs = $(this).parent().parent();
+next_fs = $(this).parent().parent().next();
+
+$(".prev").css({ 'display' : 'block' });
+
+$(current_fs).removeClass("show");
+$(next_fs).addClass("show");
+
+$("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+next_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+// Previous button
+$(".prev").click(function(){
+
+current_fs = $(".show");
+previous_fs = $(".show").prev();
+
+$(current_fs).removeClass("show");
+$(previous_fs).addClass("show");
+
+$(".prev").css({ 'display' : 'block' });
+
+if($(".show").hasClass("first-screen")) {
+$(".prev").css({ 'display' : 'none' });
+}
+
+$("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
+
+current_fs.animate({}, {
+step: function() {
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+
+previous_fs.css({
+'display': 'block'
+});
+}
+});
+});
+
+});
+  </script>
 
 </body>
 
