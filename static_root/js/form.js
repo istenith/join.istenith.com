@@ -32,19 +32,26 @@ function formReset() {
 function setupClickHandlers() {
 
 	// Show next form on continue click
-	$('button[type="submit"]').on('click', function(event) {
-			event.preventDefault();
-			var $currentForm = $(this).parents('.js-form-step');
-			showNextForm($currentForm);
-	});
+    $('button[type="submit"]').on('click', function (event) {
+        event.preventDefault();
+        var $currentForm = $(this).parents('.js-form-step');
+        if ($currentForm.attr('data-step') === '4') {
+            // If it's the last step, submit the form
+            $('form').submit();
+        } else {
+            // If it's not the last step, show the next form
+            showNextForm($currentForm);
+        }
+    });
 
 	// Reset form on reset button click
-	$('.js-reset').on('click', function() {
-		formReset();
-	});
-	
-	return false;
+    $('.js-reset').on('click', function () {
+        formReset();
+    });
+
+    return false;
 }
+
 
 /**
  * Shows the next form.
