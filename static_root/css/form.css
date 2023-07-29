@@ -1,0 +1,315 @@
+$green: rgb(11,204,108);
+$page-animDuration: .2s;
+
+body {
+	background: rgba(0,0,0,.1);
+	line-height: 1.45rem;
+	color: #444;
+	
+	&.freeze { pointer-events: none; }
+} 
+
+h1 {
+	margin: 0;
+	margin-bottom: 2rem;
+	text-align: center;
+	font-weight: normal;
+	line-height: 2.2rem;
+}
+
+
+.section {
+	max-width: 500px;
+	padding: 4rem;
+	margin: 5vh auto 0 auto;
+	/* background: white; */
+	box-shadow: 0 1px 2px rgba(0,0,0,.3);
+	
+	&:before {
+		content: "";
+		width: 100%;
+		background: lighten($green, 5%);
+		height: 170px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		border-bottom: 1px solid rgba(0,0,0,.2);
+	}
+}
+
+.form-instructions {
+	text-align: center;
+}
+
+form {
+	margin: 2rem auto;
+	width: 100%;	
+	max-width: 330px;	
+	will-change: transform;
+}
+
+
+.fieldgroup {
+	margin: 1.5rem 0;
+	position: relative;
+}
+
+label {
+	position: absolute;
+	top: .8rem;	
+	left: 0;
+	display: block;
+	font-size: 1rem;
+	transition: $page-animDuration ease-out;	
+	opacity: .5;
+	will-change: top, font-size;
+	
+	&:hover {
+		cursor: text;
+	}	
+}
+
+input {
+	border: 1px solid #fff;
+    color: #fff;
+	font-size: 1.2rem;
+	padding: .6rem;
+	padding-left: 0;
+	background:transparent;
+	border: none;
+	border-bottom: 2px solid #444;
+	transition: $page-animDuration;
+	width: calc(100% - .6rem);
+	max-width: 350px;
+	border-radius: 0;
+	
+	&:focus {
+		outline: none;
+	}
+	
+	&:valid {
+		border-color: #444;
+	}
+	
+	&:focus + label,
+	&.hasInput + label {
+		top: -.8rem;
+		font-size: .7rem;
+	}
+}
+
+
+.btn {
+	color: #fff;
+	background-color: $green;
+	padding: .8rem;
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	min-width: 45px !important;
+
+	&:hover,
+	&.hover {
+		color: #fff;
+
+		text-shadow: 0 1px 3px rgba(0,0,0,.3);
+		transition: .2s;
+	}
+
+	&:active,
+	&.active {
+		color: #fff;
+		background-color: darken($green, 20%);
+		box-shadow: inset 0 2px 10px rgba(0,0,0,.3);
+		outline: 2px solid $green;
+	}
+
+	&:focus,
+	&.focus {
+		color: #fff;
+		outline: 2px solid $green;
+		outline-offset: 2px;
+	}
+
+	&:active:focus,
+	&.active.focus {
+		outline: 4px solid $green;
+	}
+
+	//Reset outlines on button with frozen states
+	&.hover,
+	&.active { outline: none; }
+}
+
+.btn-alt {
+	background-color: transparent;
+	color: $green;
+	border: 2px solid $green;
+
+	&:hover,
+	&.hover {
+		background-color: transparent;
+		color: darken($green, 40%);
+		border-color: darken($green, 40%);
+		text-shadow: none;
+	}
+
+	&:focus,
+	&.focus {
+		color: darken($green, 20%);
+	}
+
+	&:active,
+	&.active {
+		color: #fff;
+		background-color: $green;
+		text-shadow: 0 -1px 0 rgba(255,255,255,.2);
+	}
+
+	//Reset outlines on button with frozen states
+	&.hover,
+	&.active { outline: none; }
+}
+
+.buttons { 
+	display: flex;
+	
+	.btn { margin-right: 15px; }
+}
+
+form .btn {
+	display: inline-block;
+	width: 100%;	
+	max-width: 220px;
+	margin: 4rem auto 0 auto;
+}
+
+[data-step="4"] button.btn {
+	display: block;
+	margin: 0 auto;
+}
+
+.form-progress {
+	position: relative;
+	display: block;
+	margin: 3rem auto;
+	width: 100%;
+	max-width: 400px;
+}
+
+progress { 
+	display: block;
+	position: relative;
+	top: 5px;
+	left: 5px;
+	-webkit-appearance: none;
+	appearance: none;
+	background: $green;
+	width: 100%;
+	height: 5px;
+	background: none;
+	transition: 1s;
+	will-change: contents;
+	
+	&::-webkit-progress-bar {
+		background-color: #ddd;
+	}
+	
+ &::-webkit-progress-value {
+		background-color: $green;
+		transition: all 0.5s ease-in-out;
+	}
+}
+
+.form-progress-indicator {
+	position: absolute;
+	top: -6px;
+	left: 0;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border: 3px solid #ddd;
+	border-radius: 50%;
+	transition: all .2s ease-in-out;
+	transition-delay: .3s;
+	will-change: transform;
+	
+	&.one		{ left: 0; }
+	&.two 	{ left: 33%; }
+	&.three { left: 66%; }	
+	&.four 	{ left: 100%; }	
+	
+	&.active {
+		animation: bounce .5s forwards;
+		animation-delay: .5s;
+		border-color: $green;
+	}
+}
+
+.animation-container {
+	position: relative;
+	width: 100%;
+	transition: .3s;
+	will-change: padding;
+	overflow: hidden;
+}
+
+.form-step {
+	position: absolute;
+	transition: 1s ease-in-out;
+	transition-timing-function: ease-in-out;
+	will-change: transform, opacity;
+}
+
+.form-step.leaving {
+	animation: left-and-out .5s forwards;
+}
+
+.form-step.waiting {
+	transform: translateX(400px);
+}
+
+.form-step.coming {
+	animation: right-and-in .5s forwards;
+}
+
+@keyframes left-and-out {
+	100% {
+		opacity: 0;
+		transform: translateX(-400px);
+	}
+}
+
+@keyframes right-and-in {
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes bounce {
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+.hidden {
+	display: none;
+}

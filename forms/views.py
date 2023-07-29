@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
-
+import zipfile
 
 def error_404_view(request, exception):
     return render(request, "404.html")
@@ -21,6 +21,7 @@ def index(request):
     terms = Terms_n_Condition.objects.all()
     placeholder = FormPlaceholder.objects.all()
     faq = FAQ.objects.all()
+
     if request.method == "POST":
         form = RegisterationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -32,27 +33,19 @@ def index(request):
                 'faq': faq,
             }
             return render(request, "success.html", ctx)
-        else:
-            context = {
-                'placeholder': placeholder,
-                'faq': faq,
-                "form": form,
-                "template": template,
-                "social": social,
-                "terms": terms
-            }
-            return render(request, "index.html", context)
-    form = RegisterationForm()
-    ctx = {
-        'faq': faq,
+    else:
+        # If it's not a POST request or the form is not valid, re-render the form with errors
+        form = RegisterationForm()
+
+    context = {
         'placeholder': placeholder,
+        'faq': faq,
         "form": form,
         "template": template,
         "social": social,
         "terms": terms
     }
-
-    return render(request, "index.html", ctx)
+    return render(request, "index.html", context)
 
 
 def filedownload(request, filename):

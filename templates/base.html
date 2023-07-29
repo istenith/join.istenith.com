@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
   <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
   <style>
     @import url(https://fonts.googleapis.com/css?family=Lobster);
 
@@ -124,7 +126,7 @@
     .box {
       position: absolute;
       /* top: 50%; */
-      margin-top: 690px;
+      margin-top: 400px;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 560px;
@@ -790,7 +792,7 @@
       $(this).addClass('c-faq--active');
     });
   </script>
-
+  <script src="{% static 'js/form.js'%}"></script>
 
 </body>
 

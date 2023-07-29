@@ -38,6 +38,7 @@ nav .navbar-nav li a:hover {
 nav .navbar-nav  li a:after {
   display: block;
   position: absolute;
+  border-radius: 40px;
   top: 0;
   left: 0;
   bottom: 0;
