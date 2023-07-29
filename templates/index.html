@@ -13,6 +13,8 @@
 {% block form %}
 {% for i in placeholder %}
 <div class="box" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);">
+  <form action="{% url 'index' %} method="post">
+    {% csrf_token %}
     <div class="container-fluid px-1 px-md-4 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-11 col-lg-10 col-xl-9">
@@ -140,7 +142,7 @@
                                     {{form.terms_confirmed|attr:'required'}}
                                     <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
                                         {% if form.terms_confirmed.errors %}
-                                            <div class="help-block" style="margin-top:-9px; color: #ffe300;">{{ form.terms_confirmed.errors }}</div>
+                                            <div class="help-block" style="margin-top:-9px; color: #000;">{{ form.terms_confirmed.errors }}</div>
                                         {% endif %}
 
                                 </div>
@@ -159,6 +161,7 @@
           </div>
         </div>
       </div>
+    </form>
 </div>
 {% endfor %}
 {% endblock %}

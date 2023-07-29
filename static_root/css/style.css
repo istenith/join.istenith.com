@@ -159,7 +159,7 @@ body {
   display: inline-block;
   padding: 10px 20px;
   color: white;
-  background-color: #fd3e81;
+  background-color: #000000;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -295,7 +295,7 @@ FOOTER {
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #ff5e14;
+  background: #000000;
 }
 
 .footer-widget ul li a {
@@ -320,7 +320,7 @@ FOOTER {
   margin-left: 20px;
 }
 .footer-menu li:hover a {
-  color: #ff5e14;
+  color: #000000;
 }
 .footer-menu li a {
   font-size: 14px;
