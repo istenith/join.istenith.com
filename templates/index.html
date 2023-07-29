@@ -18,7 +18,7 @@
           <div class="col-12 col-md-11 col-lg-10 col-xl-9">
             <div class="card card0 border-0">
               <div class="row">
-                <div class="col-12">
+                <div>
                   <div class="card card00 m-2 border-0">
                     <div class="row text-center justify-content-center px-3">
                       <p class="prev text-danger"><span class="fa fa-long-arrow-left"> Go Back</span></p id="back">
@@ -33,9 +33,10 @@
                             <li class="step0"></li>
                             <li class="step0"></li>
                           </ul>
-                          <h6 class="mb-5">Enter your Email</h6>
-                          <h6 class="mb-5">Set password</h6>
-                          <h6 class="mb-5">Select your country</h6>
+                          <h6 class="mb-5">Personal Details</h6>
+                          <h6 class="mb-5">Skills</h6>
+                          <h6 class="mb-5">About ISTE?</h6>
+                          <h6 class="mb-5">CV Upload</h6>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -49,7 +50,30 @@
                             <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
                           </div>
                           <div class="row px-3 mt-4">
-                            <div class="form-group mt-1 mb-1"> <input type="text" id="email" class="form-control" required> <label class="ml-3 form-control-placeholder" for="email">Email</label> </div>
+                            <div class="form-group mt-1 mb-1"> {{form.name}} <label class="ml-3 form-control-placeholder" for="email">{{i.name_input|safe}}</label>
+                            {% if form.name.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
+                            {% endif %}
+                         </div>
+                         <div class="row px-3 mt-4">
+                            <div class="form-group mt-1 mb-1"> {{form.email}} <label class="ml-3 form-control-placeholder" for="email">{{i.email_input|safe}}</label>
+                            {% if form.email.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
+                            {% endif %}
+                         </div>
+                         <div class="row px-3 mt-4">
+                            <div class="form-group mt-1 mb-1">  {{form.phone_number}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
+                            {% if form.phone_number.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
+                            {% endif %}
+                         </div>
+                         <div class="row px-3 mt-4">
+                            <div class="form-group mt-1 mb-1">   {{form.branch|attr:"class:branch"}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
+                            {% if form.branch.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.branch.errors }}</div>
+                            {% endif %}
+                         </div>
+                                               
                             <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                           </div>
                           <div class="row px-3 mt-1 mb-5">
@@ -58,7 +82,23 @@
                         </div>
                         <div class="card2 ml-2">
                           <div class="row px-3 mt-3">
-                            <div class="form-group mt-1 mb-1"> <input type="password" id="pwd" class="form-control" required> <label class="ml-3 form-control-placeholder" for="pwd">Password</label> </div>
+                            <div class="form-group mt-1 mb-1">  {{form.skills}} <label class="ml-3 form-control-placeholder" for="pwd">Your Skills</label>
+                            {% if form.skills.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
+                            {% endif %} 
+                        </div>
+                        <div class="row px-3 mt-3">
+                            <div class="form-group mt-1 mb-1">  {{form.strength}} <label class="ml-3 form-control-placeholder" for="pwd">Your Strengths</label>
+                            {% if form.strength.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
+                            {% endif %} 
+                        </div>
+                        <div class="row px-3 mt-3">
+                            <div class="form-group mt-1 mb-1">  {{form.weakness}} <label class="ml-3 form-control-placeholder" for="pwd">Your Weaknesses</label>
+                            {% if form.weakness.errors %}
+                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
+                            {% endif %} 
+                        </div>
                             <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                           </div>
                           <div class="row mt-3 mb-5">
@@ -77,31 +117,47 @@
                         </div>
                         <div class="card2 ml-2">
                           <div class="row px-3 mt-3">
-                            <p class="mb-0 w-100">Select your Country</p>
-                            <div class="form-group mt-3 mb-4">
-                              <div class="select mb-3"> <select name="account" class="form-control custom-select">
-                                  <option>India</option>
-                                  <option>USA</option>
-                                  <option>Germany</option>
-                                  <option>Mexico</option>
-                                </select> </div>
-                            </div>
+                            <h5 style="margin: 1rem 0 0.8rem;">Why do you want to join ISTE?</h5>
+                            {{form.why_join_iste}} <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
+                            {% if form.why_join.iste.errors %}
+                            <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.why_join_iste.errors }}</div>
+                            {% endif %}
+                            <h5 style="margin: 1rem 0 0.8rem;">Why should ISTE choose you?</h5>
+                            {{form.expect_from_iste}}
+                            {% if form.expect_from_iste.errors %}
+                             <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.expect_from_iste.errors }}</div>
+                            {% endif %}
                             <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                           </div>
                         </div>
                         <div class="card2 ml-2">
                           <div class="row px-3 mt-2 mb-4 text-center">
-                            <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
-                            <div class="col-12 text-center"><img class="tick" src="https://i.imgur.com/WDI0da4.gif"></div>
-                            <h6 class="col-12 mt-2"><i>...Enjoy COOKIES...</i></h6>
-                          </div>
+                            <div class=" form-group">
+                                {{form.resume|attr:"class:input-file"|attr:"id:file"}}
+
+                                <label for="file" class="btn btn-tertiary js-labelFile">
+                                    <i class="icon fa fa-upload"></i>
+                                    <span class="js-fileName">{{i.cv_upload_input|safe}}</span>
+                                </label>
+                                <p style="color:#D33434;">(Optional)</p>
+                                {% if form.resume.errors %}
+                                    <div class="help-block" style="margin-top:0px; color: #ffe300;">{{ form.resume.errors }}</div>{% endif %}
+                            </div>
+                                <div class=" tacbox">
+                                    {{form.terms_confirmed|attr:'required'}}
+                                    <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
+                                        {% if form.terms_confirmed.errors %}
+                                            <div class="help-block" style="margin-top:-9px; color: #ffe300;">{{ form.terms_confirmed.errors }}</div>
+                                        {% endif %}
+
+                                </div>
+                            <input type="submit" name="" value="Submit">
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="row px-3">
-                      <h2 class="text-muted get-bonus mt-4 mb-5">Get Bonus <span class="text-danger">666</span> cookies</h2> <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png">
                     </div>
                   </div>
                 </div>
