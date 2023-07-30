@@ -1,14 +1,12 @@
-FROM python:3
+FROM python:3.10
 
 WORKDIR /app
 
-COPY requirements.txt /app/ 
+COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-COPY . /app/
+COPY . .
 
-COPY entrypoint.sh /app/
-
-ENTRYPOINT [ "sh", "entrypoint.sh" ]
+EXPOSE 8081
 

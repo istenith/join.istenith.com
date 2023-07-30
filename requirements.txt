@@ -1,5 +1,6 @@
 asgiref==3.5.2
 defusedxml==0.7.1
+gunicorn
 diff-match-patch==20200713
 Django==4.0.8
 django-adminactions==2.0.0
