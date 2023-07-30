@@ -28,6 +28,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no lucifer@sumitdhiman.in << EOF
             cd join.istenith.com
             git config pull.rebase false
-            git pull origin stage
+            git pull origin main
             docker compose up --build -d
           EOF
