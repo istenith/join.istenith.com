@@ -1,11 +1,15 @@
-version: '3.7'
+version: '3'
 
 services: 
   app:
     volumes:
-      - /media
-      - /db.sqlite3
+      - media:/media
+      - db:/db.sqlite3
     build: .
     ports:
       - "8081:8081"
     command: gunicorn --bind 0.0.0.0:8081 main.wsgi
+
+volumes:
+  media:
+  db:
