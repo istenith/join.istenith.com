@@ -13,135 +13,136 @@
 {% block form %}
 {% for i in placeholder %}
 <div class="box" style="backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);">
-  <form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+<form autocomplete="off" action="{% url 'index' %}" enctype="multipart/form-data" method="post">
     {% csrf_token %}
-          <div class="">
-            <div>
-                <div>
-                  <div>
-                    <div class="row text-center justify-content-center px-3">
-                      <p class="prev text-danger"><span class="fa fa-long-arrow-left"> Go Back</span></p id="back">
-                      <h3 class="mt-4">Registration</h3>
-                    </div>
-                    <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
-                      <div class="col-md-6">
-                        <div class="card1">
-                          <ul id="progressbar" class="text-center">
-                            <li class="active step0"></li>
-                            <li class="step0"></li>
-                            <li class="step0"></li>
-                            <li class="step0"></li>
-                          </ul>
-                          <h6 class="mb-5">Personal Details</h6>
-                          <h6 class="mb-5">Skills</h6>
-                          <h6 class="mb-5">About ISTE?</h6>
-                          <h6 class="mb-5">CV Upload</h6>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card2 first-screen show ml-2">
-                          
-                          <div class="row px-3 mt-4 inputBox">
-                            <div class="form-group mt-1 mb-1"> {{form.name}} <label class="ml-3 form-control-placeholder" for="email">{{i.name_input|safe}}</label>
-                            {% if form.name.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
-                            {% endif %}
-                         </div>
-                         <div class="row px-3 mt-4 inputBox">
-                            <div class="form-group mt-1 mb-1"> {{form.email}} <label class="ml-3 form-control-placeholder" for="email">{{i.email_input|safe}}</label>
-                            {% if form.email.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
-                            {% endif %}
-                         </div>
-                         <div class="row px-3 mt-4 inputBox">
-                            <div class="form-group mt-1 mb-1">  {{form.phone_number}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
-                            {% if form.phone_number.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
-                            {% endif %}
-                         </div>
-                         <div class="row px-3 mt-4 inputBox">
-                            <div class="form-group mt-1 mb-1">
-                            {{form.branch|attr:"class:branch"}}
-                            {% if form.branch.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.branch.errors }}</div>
-                            {% endif %}
-                         </div>
-                                               
-                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
-                          </div>
-                        </div>
-                        <div class="card2 ml-2">
-                          <div class="row px-3 mt-3 inputBox">
-                            <div class="form-group mt-1 mb-1">  {{form.skills}} <label class="ml-3 form-control-placeholder" for="pwd">Your Skills</label>
-                            {% if form.skills.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
-                            {% endif %} 
-                        </div>
-                        <div class="row px-3 mt-3 inputBox">
-                            <div class="form-group mt-1 mb-1">  {{form.strength}} <label class="ml-3 form-control-placeholder" for="pwd">Your Strengths</label>
-                            {% if form.strength.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
-                            {% endif %} 
-                        </div>
-                        <div class="row px-3 mt-3 inputBox">
-                            <div class="form-group mt-1 mb-1">  {{form.weakness}} <label class="ml-3 form-control-placeholder" for="pwd">Your Weaknesses</label>
-                            {% if form.weakness.errors %}
-                                <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
-                            {% endif %} 
-                        </div>
-                            <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
-                          </div>
-                        </div>
-                        <div class="card2 ml-2">
-                          <div class="row px-3 mt-3 inputBox">
-                            <h5 style="margin: 1rem 0 0.8rem;">Why do you want to join ISTE?</h5>
-                            {{form.why_join_iste}} <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
-                            {% if form.why_join.iste.errors %}
-                            <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.why_join_iste.errors }}</div>
-                            {% endif %}
-                            <h5 style="margin: 1rem 0 0.8rem;">Why should ISTE choose you?</h5>
-                            {{form.expect_from_iste}}
-                            {% if form.expect_from_iste.errors %}
-                             <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.expect_from_iste.errors }}</div>
-                            {% endif %}
-                            <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
-                          </div>
-                        </div>
-                        <div class="card2 ml-2">
-                          <div class="row px-3 mt-2 mb-4 text-center">
-                            <div class=" form-group">
-                                {{form.resume|attr:"class:input-file"|attr:"id:file"}}
-
-                                <label for="file" class="btn btn-tertiary js-labelFile">
-                                    <i class="icon fa fa-upload"></i>
-                                    <span class="js-fileName">{{i.cv_upload_input|safe}}</span>
-                                </label>
-                                <p style="color:#D33434;">(Optional)</p>
-                                {% if form.resume.errors %}
-                                    <div class="help-block" style="margin-top:0px; color: #ffe300;">{{ form.resume.errors }}</div>{% endif %}
-                            </div>
-                                <div class=" tacbox">
-                                    {{form.terms_confirmed|attr:'required'}}
-                                    <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
-                                        {% if form.terms_confirmed.errors %}
-                                            <div class="help-block" style="margin-top:-9px; color: #000;">{{ form.terms_confirmed.errors }}</div>
-                                        {% endif %}
-
-                                </div>
-                            <input type="submit" name="" value="Submit">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="row px-3">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+<div>
+  <div>
+      <div>
+          <div class="row text-center justify-content-center px-3">
+              <p class="prev text-danger"><span class="fa fa-long-arrow-left"> Go Back</span></p id="back">
+              <h3 class="mt-4">Registration</h3>
           </div>
-    </form>
+          <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
+              <div class="col-md-6">
+                  <div class="card1">
+                      <ul id="progressbar" class="text-center">
+                          <li class="active step0"></li>
+                          <li class="step0"></li>
+                          <li class="step0"></li>
+                          <li class="step0"></li>
+                      </ul>
+                      <h6 class="mb-5">Personal Details</h6>
+                      <h6 class="mb-5">Skills</h6>
+                      <h6 class="mb-5">About ISTE?</h6>
+                      <h6 class="mb-5">CV Upload</h6>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="card2-container">
+                      <div class="card2 first-screen show ml-2">
+                          <div class="row px-3 mt-4 inputBox">
+                              <div class="form-group mt-1 mb-1">
+                                  {{form.name}}
+                                  <label class="ml-3 form-control-placeholder" for="email">{{i.name_input|safe}}</label>
+                                  {% if form.name.errors %}
+                                      <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.name.errors }}</div>
+                                  {% endif %}
+                              </div>
+                            </div>
+                              <div class="row px-3 mt-4 inputBox">
+                                <div class="form-group mt-1 mb-1"> {{form.email}} <label class="ml-3 form-control-placeholder" for="email">{{i.email_input|safe}}</label>
+                                {% if form.email.errors %}
+                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
+                                {% endif %}
+                              </div>
+                              <div class="row px-3 mt-4 inputBox">
+                                <div class="form-group mt-1 mb-1">  {{form.phone_number}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
+                                {% if form.phone_number.errors %}
+                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
+                                {% endif %}
+                              </div>
+                              <div class="row px-3 mt-4 inputBox">
+                                <div class="form-group mt-1 mb-1">
+                                {{form.branch|attr:"class:branch"}}
+                                {% if form.branch.errors %}
+                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.branch.errors }}</div>
+                                {% endif %}
+                                </div>
+                                <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="card2 ml-2">
+                          <div class="row px-3 mt-3 inputBox">
+                              <div class="form-group mt-1 mb-1">
+                                  {{form.skills}}
+                                  <label class="ml-3 form-control-placeholder" for="pwd">Your Skills</label>
+                                  {% if form.skills.errors %}
+                                      <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.skills.errors }}</div>
+                                  {% endif %} 
+                              </div>
+                              <div class="row px-3 mt-3 inputBox">
+                                <div class="form-group mt-1 mb-1">  {{form.strength}} <label class="ml-3 form-control-placeholder" for="pwd">Your Strengths</label>
+                                {% if form.strength.errors %}
+                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.strength.errors }}</div>
+                                {% endif %} 
+                              </div>
+                              <div class="row px-3 mt-3 inputBox">
+                                <div class="form-group mt-1 mb-1">  {{form.weakness}} <label class="ml-3 form-control-placeholder" for="pwd">Your Weaknesses</label>
+                                    {% if form.weakness.errors %}
+                                    <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.weakness.errors }}</div>
+                                    {% endif %} 
+                                </div>
+                               <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="card2 ml-2">
+                          <div class="row px-3 mt-3 inputBox">
+                              <h5 style="margin: 1rem 0 0.8rem;">Why do you want to join ISTE?</h5>
+                              {{form.why_join_iste}}
+                              <label for="" style="color: transparent;">Why do you want to join ISTE?</label>
+                              {% if form.why_join_iste.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.why_join_iste.errors }}</div>
+                              {% endif %}
+                              <h5 style="margin: 1rem 0 0.8rem;">Why should ISTE choose you?</h5>
+                              {{form.expect_from_iste}}
+                              {% if form.expect_from_iste.errors %}
+                                  <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.expect_from_iste.errors }}</div>
+                              {% endif %}
+                              <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right">Next</span> </div>
+                          </div>
+                      </div>
+                      <div class="card2 ml-2">
+                          <div class="row px-3 mt-2 mb-4 text-center">
+                              <div class="form-group">
+                                  {{form.resume|attr:"class:input-file"|attr:"id:file"}}
+
+                                  <label for="file" class="btn btn-tertiary js-labelFile">
+                                      <i class="icon fa fa-upload"></i>
+                                      <span class="js-fileName">{{i.cv_upload_input|safe}}</span>
+                                  </label>
+                                  <p style="color:#D33434;">(Optional)</p>
+                                  {% if form.resume.errors %}
+                                      <div class="help-block" style="margin-top:0px; color: #ffe300;">{{ form.resume.errors }}</div>{% endif %}
+                              </div>
+                              <div class="tacbox">
+                                  {{form.terms_confirmed|attr:'required'}}
+                                  <label for="checkbox"> I agree to these <a href="#" data-toggle="modal" data-target="#largeModal" style="color: #4dddfc;" >Terms and Conditions</a>.</label>
+                                  {% if form.terms_confirmed.errors %}
+                                      <div class="help-block" style="margin-top:-9px; color: #000;">{{ form.terms_confirmed.errors }}</div>
+                                  {% endif %}
+                              </div>
+                              <input type="submit" name="" value="Submit">
+                           </div>
+                        </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
+</form>
 {% endfor %}
 {% endblock %}
