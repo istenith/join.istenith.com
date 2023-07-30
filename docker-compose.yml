@@ -3,8 +3,8 @@ version: '3'
 services: 
   app:
     volumes:
-      - media:/app/media
-      - db:/app/db.sqlite3
+      - media:/app/media/
+      - ./db.sqlite3:/app/db.sqlite3
     build: .
     ports:
       - "8081:8081"
@@ -12,4 +12,4 @@ services:
 
 volumes:
   media:
-  db:
+

@@ -1,7 +1,6 @@
 PYTHON= python3
 MANAGE= venv/bin/python manage.py
 ACTIVATE=. venv/bin/activate
-
 # Django Configrations
 PORT= 8009
 
