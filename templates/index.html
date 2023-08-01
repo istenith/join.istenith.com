@@ -57,21 +57,17 @@
                                     <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.email.errors }}</div>
                                 {% endif %}
                               </div>
-                              <div class="row px-3 mt-4 inputBox">
                                 <div class="form-group mt-1 mb-1">  {{form.phone_number}} <label class="ml-3 form-control-placeholder" for="email">{{i.phone_number_input|safe}}</label>
                                 {% if form.phone_number.errors %}
                                     <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.phone_number.errors }}</div>
                                 {% endif %}
                               </div>
-                              <div class="row px-3 mt-4 inputBox">
                                 <div class="form-group mt-1 mb-1">
                                 {{form.branch|attr:"class:branch"}}
                                 {% if form.branch.errors %}
                                     <div class="help-block" style="margin-top:-27px; color: #ffe300;">{{ form.branch.errors }}</div>
                                 {% endif %}
                                 </div>
-                              </div>
-                          </div>
                           <div class="next-button text-center mt-1" style="width: 100%;"> Next <span class="fa fa-arrow-right"></span> </div>
                           </div>
                       </div>
@@ -152,6 +148,8 @@
           </div>
       </div>
   </div>
+  <div style="padding-top: 2rem;">All the fields are mandatory!</div>
+  <div>Form will not submit until all fields are filled.</div>
 </div>
 </form>
 {% endfor %}

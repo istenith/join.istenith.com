@@ -52,7 +52,6 @@ class Registeration(models.Model):
             file_size,
             FileExtensionValidator(allowed_extensions=["pdf", "docx"])
         ],
-        blank=True,
         null=True)
     weakness = models.CharField(max_length=200, verbose_name="Weakness")
     strength = models.CharField(max_length=200, verbose_name="Strengths")
