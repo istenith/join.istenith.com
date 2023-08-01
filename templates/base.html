@@ -229,10 +229,10 @@
       }
     }
 
-    @media(max-width: 390px) {
+    @media(max-width: 400px) {
       .box {
         padding-top: 0px;
-        margin-top: 20rem;
+        margin-top: 22rem;
         width: 100%;
       }
 
@@ -330,6 +330,12 @@
       /* transition: .5s; */
       /* animation: LabelOnLoad 1s forwards 0s ease; */
     }
+    .date-div{
+      margin-top: 4px;
+    }
+    .location-div{
+      margin-top: 1px;
+    }
 
     /* @keyframes LabelOnLoad { */
     /*   0% { */
@@ -382,8 +388,14 @@
       }
 
       .intro-text {
-        margin-top: 100px;
+        margin-top: 60px;
         margin-bottom: 35px;
+      }
+      .date-div{
+      margin-top: 3rem;
+      }
+      .location-div{
+        margin-top: 10px;
       }
 
     }
@@ -601,9 +613,9 @@
       background: transparent;
       color: #fff !important;
     }
-    .aboutDIV{
-      margin-top: 20.37rem;
-    }
+    /* .aboutDIV{
+      margin-top: 7.35rem;
+    } */
     textarea{
       height: 80px;
       width:100%
@@ -799,6 +811,12 @@
       font-family: Cabin, Helvetica Neue, Helvetica, Arial, sans-serif;
       color: #000;
 }
+.aboutContainer{
+  padding: 0 45px;
+}
+.homeContainer{
+  padding: 0 45px;
+}
 
 @media screen and (max-width: 912px) {
     .card00 {
@@ -838,7 +856,8 @@
       margin-bottom:80px ;
     }
     .aboutDIV{
-      margin-top: 23rem ;
+      margin-top: 2rem ;
+      padding-bottom: 3rem;
     }
 }
 
@@ -882,7 +901,7 @@
   </nav>
   <header id="head" class="masthead">
     <div class="intro-body" id="container">
-      <div class="container">
+      <div class="container homeContainer">
         {% for template in template %}
          {% if template.Registeration_Closed == 0 %}
          {% block container %}
@@ -902,7 +921,7 @@
     </div>
   </header>
   <section class="text-center content-section" id="about">
-    <div class="container">
+    <div class="container aboutContainer">
       <div class="row">
         <div class="col-lg-8 mx-auto aboutDIV">
           <h2>About ISTE-NITH</h2>

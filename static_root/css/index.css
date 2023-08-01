@@ -1,21 +1,32 @@
 #download{
-  background-image: url('../images/nith-road.jpeg');
+  background-image: url('../images/nith1.jpeg');
   background-image: linear-gradient(
       to bottom,
       rgb(0 0 0 / 35%) 0%,
       rgb(0 0 0) 104%
     ),
-    url("../images/nith-road.jpeg");
+    url("../images/nith1.jpeg");
+}
+
+#about{
+  background-image: url('../images/nith1.jpeg');
+  background-image: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 35%) 0%,
+      rgb(0 0 0) 104%
+    ),
+    url("../images/nith1.jpeg");
+    margin-top: 360px !important;
 }
 
 #head{
-background-image: url("../images/nith-road.jpeg");
+background-image: url("../images/nith1.jpeg");
     background-image: linear-gradient(
       to bottom,
       rgb(0 0 0 / 35%) 0%,
       rgb(0 0 0) 100%
     ),
-    url("../images/nith-road.jpeg");
+    url("../images/nith1.jpeg");
 }
 
 
