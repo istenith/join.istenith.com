@@ -74,6 +74,8 @@ class Template(SingletonModel):
     brand_heading = models.CharField(max_length=1000, null=True, blank=True)
     intro_text = models.CharField(max_length=100000000, null=True, blank=True)
     about_para = models.CharField(max_length=100000000, null=True, blank=True)
+    dates= models.CharField(max_length=100000000, null=True, blank=True)
+    location= models.CharField(max_length=100000000, null=True, blank=True)
     download_para = models.CharField(max_length=1000000, null=True, blank=True)
     download_cv_pdf = models.FileField(upload_to="sample_pdf/",
                                        null=True,

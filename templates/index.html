@@ -5,7 +5,10 @@
 <div class="row d-xl-flex justify-content-xl-start" style="height: 456px;">
     <div class="col-lg-8 mx-auto" style="height: 21px;">
         <h1 class="brand-heading" style="font-size: 49px; height: 21px;">{{template.brand_heading|safe}}</h1>
-        <p class="intro-text" style="height: 35.1875px; font-size: 17px;">{{template.intro_text|safe}}</p>
+        <div class="intro-text" style="height: auto; font-size: 17px;">{{template.intro_text|safe}}
+        <div class="date-div"><span style="color: #00FFCA;">Date- </span>{{template.dates|safe}}</div>
+        <div class="location-div"> <span style="color: #00FFCA;">Venue- </span>{{template.location|safe}}</div>
+        </div>
     </div>
 </div>
 {% endblock container %}
