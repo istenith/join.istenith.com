@@ -245,6 +245,9 @@
         padding-top:150px;
         padding-bottom:0px;
       }
+      .aboutDIV h2 span{
+        display: block;
+      }
     }
 
     .btn-tertiary {
@@ -435,6 +438,7 @@
     }
 
     .c-faq__answer {
+      font-size: 1rem !important;
       position: absolute;
       opacity: 0;
       z-index: -1;
@@ -889,7 +893,7 @@
           <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="#about" style="text-align: center;">About</a>
           </li>
           <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger"
-              href="#download" style="text-align: center;">Download</a></li>
+              href="#download" style="text-align: center;">Downloads</a></li>
           <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger"
               href="#contact" style="text-align: center;">Contact</a></li>
           {% for template in template %}
@@ -931,7 +935,7 @@
     <div class="container aboutContainer">
       <div class="row">
         <div class="col-lg-8 mx-auto aboutDIV">
-          <h2>About ISTE-NITH</h2>
+          <h2>About <Span style="color: #00FFCA;">ISTE-NITH</Span></h2>
           <p>{{template.about_para|safe}}</p>
         </div>
       </div>
