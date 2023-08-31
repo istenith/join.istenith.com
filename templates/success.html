@@ -49,7 +49,12 @@
     transition: stroke-dashoffset 350ms ease;
     transition-delay: 100ms;
   }
-
+  .next-button{
+    border-radius: 5px;
+    background: #4BB543;
+    padding: 5px;
+    font-size: 20px;
+  }
   .active .icon-checkmark circle {
     transform: scale(1);
   }
@@ -73,6 +78,7 @@
   <div class="success-message__content">
     {{template.success_message|safe}} 
   </div>
+  <a href="https://chat.whatsapp.com/Hsbmabec50LG1tMifHrdl4"><button class="next-button">Proceed</button></a>
 </div>
 <script>
   function PathLoader(el) {
