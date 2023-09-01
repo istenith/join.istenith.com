@@ -556,6 +556,7 @@
       border: 0px solid #f1f2f3;
       border-top: 1px solid #00FFCA;
       padding: 20px;
+      font-style: italic;
     }
 
     @media (min-width: 780px) {
@@ -1066,7 +1067,7 @@
     });
   </script>
 
-  <script>
+  {% comment %} <script>
     // JS for form
     $(document).ready(function(){
 
@@ -1139,6 +1140,100 @@ previous_fs.css({
 
 });
   </script>
+   {% endcomment %}
+
+   <script>
+    // JS for form
+    $(document).ready(function(){
+
+        var current_fs, next_fs, previous_fs;
+
+        // No BACK button on first screen
+        if($(".show").hasClass("first-screen")) {
+            $(".prev").css({ 'display' : 'none' });
+        }
+
+        // Next button
+        $(".next-button").click(function(){
+
+            current_fs = $(this).parent().parent();
+            next_fs = $(this).parent().parent().next();
+
+            // Validate the current card's input fields
+            if (validateFields(current_fs)) {
+                $(".prev").css({ 'display' : 'block' });
+
+                $(current_fs).removeClass("show");
+                $(next_fs).addClass("show");
+
+                $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+                current_fs.animate({}, {
+                    step: function() {
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+
+                        next_fs.css({
+                            'display': 'block'
+                        });
+                    }
+                });
+            }
+        });
+
+        // Previous button
+        $(".prev").click(function(){
+
+            current_fs = $(".show");
+            previous_fs = $(".show").prev();
+
+            $(current_fs).removeClass("show");
+            $(previous_fs).addClass("show");
+
+            $(".prev").css({ 'display' : 'block' });
+
+            if($(".show").hasClass("first-screen")) {
+                $(".prev").css({ 'display' : 'none' });
+            }
+
+            $("#progressbar li").eq($(".card2").index(current_fs)).removeClass("active");
+
+            current_fs.animate({}, {
+                step: function() {
+                    current_fs.css({
+                        'display': 'none',
+                        'position': 'relative'
+                    });
+
+                    previous_fs.css({
+                        'display': 'block'
+                    });
+                }
+            });
+        });
+
+        // Function to validate the fields in a card
+        function validateFields(card) {
+            // You can add validation logic here for each input field
+            var isValid = true;
+
+            // Example validation for name input (you can extend this for other fields)
+            var nameInput = card.find("input[name='name']");
+            if (nameInput.val().trim() === '') {
+                isValid = false;
+                nameInput.next(".help-block").text("Name is required.");
+            } else {
+                nameInput.next(".help-block").text(""); // Clear error message
+            }
+
+            // Add similar validation logic for other fields
+
+            return isValid;
+        }
+    });
+</script>
 
 </body>
 
