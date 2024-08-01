@@ -37,9 +37,9 @@ class Registeration(models.Model):
         unique=True,
         validators=[
             RegexValidator(
-                regex=r'^[2][2][a-zA-Z]{3}\d{3}@nith[.]ac[.]in$',
+                regex=r'^[2][3][a-zA-Z]{3}\d{3}@nith[.]ac[.]in$',
                 message=
-                "Only freshers with correct college email addresses are authorised."
+                "Only Sophomores with correct college email address are authorised."
             )
         ],
     )
