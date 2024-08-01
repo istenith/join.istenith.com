@@ -1219,7 +1219,7 @@ previous_fs.css({
 
             // Example validation for name input (you can extend this for other fields)
             var nameInput = card.find("input[name='name']");
-            if (nameInput.val().trim() === '') {
+            if (nameInput.val() === '') {
                 isValid = false;
                 nameInput.next(".help-block").text("Name is required.");
             } else {
