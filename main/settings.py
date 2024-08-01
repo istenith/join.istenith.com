@@ -132,8 +132,8 @@ JAZZMIN_SETTINGS = {
     # Title on the login screen (19 chars max) (will default to current_admin_site.site_header)
     "site_header": "join.istenith.com",
     # Title on the brand (19 chars max) (will default to current_admin_site.site_header)
-    "site_brand": "ISTE-NITH'22",
-    "welcome_sign": "Welcome to the admin dashboard. Login to take incharge.",
+    "site_brand": "ISTE-NITH'24",
+    "welcome_sign": "Welcome to the admin dashboard. Login to take charge.",
     # Copyright on the footer
     "copyright": "ISTE-NITH",
     "changeform_format": "horizontal_tabs",
