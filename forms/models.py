@@ -34,15 +34,8 @@ class Registeration(models.Model):
     )
     name = models.CharField(max_length=50)
     email = models.EmailField(
-        unique=True,
-        validators=[
-            RegexValidator(
-                regex=r'^[2][3][a-zA-Z]{3}\d{3}@nith[.]ac[.]in$',
-                message=
-                "Only Sophomores with correct college email address are authorised."
-            )
-        ],
-    )
+    unique=True,
+)
     phone_number = PhoneNumberField(unique=True)
     branch = models.CharField(choices=BRANCH, max_length=100, default='')
     resume = models.FileField(
