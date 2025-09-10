@@ -18,6 +18,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://join.istenith.com",
     "http://join.istenith.com",
     "http://0.0.0.0:8081",
+    "https://iste.nith.ac.in"
 ]
 
 INSTALLED_APPS = [
