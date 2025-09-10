@@ -14,6 +14,13 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
+# Set FORCE_SCRIPT_NAME conditionally based on environment
+IS_PRODUCTION = os.environ.get('IS_PRODUCTION', 'False') == 'True'
+if IS_PRODUCTION:
+    FORCE_SCRIPT_NAME = '/join'
+    USE_X_FORWARDED_HOST = True
+
+
 CSRF_TRUSTED_ORIGINS = [
     "https://join.istenith.com",
     "http://join.istenith.com",
