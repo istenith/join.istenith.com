@@ -4,7 +4,7 @@
     text-align: center;
     max-width: 500px;
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -13,6 +13,33 @@
     max-width: 75px;
   }
 
+.success-message__community {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  
+}
+
+.success-message__community p {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #00FFCA;
+}
+
+.success-message__community .join-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #0194fe;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.success-message__community .join-link:hover {
+  background: #1ebf5d;
+}
   .success-message__title {
     color: #00FFCA;
     transform: translateY(25px);
@@ -70,9 +97,18 @@
     />
   </svg>
   <h1 class="success-message__title">Application Submitted successfully</h1>
+
   <div class="success-message__content">
     {{template.success_message|safe}} 
   </div>
+  <div class="success-message__community">
+  <p>
+    Join our WhatsApp community for updates and announcements!
+  </p>
+  <a href="https://chat.whatsapp.com/IjnIMbJwnHL44eVsndARaq" target="_blank" class="join-link">
+    👉 Click here to join
+  </a>
+</div>
 </div>
 <script>
   function PathLoader(el) {
