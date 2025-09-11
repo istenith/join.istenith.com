@@ -895,16 +895,13 @@
               href="#download" style="text-align: center;">Downloads</a></li>
           <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger"
               href="#contact" style="text-align: center;">Contact</a></li>
-          {% for template in template %}
-          {% if template.show_results == 0 %}
-
-          {% else %}
+          {% comment %} {% for template in template %}
           <li class="nav-item nav-link js-scroll-trigger"><a
               style="text-decoration: underline; text-decoration-color: #00FFCA;" class="nav-link js-scroll-trigger"
               href="{% url 'results' %}">Result</a></li>
 
           {% endif %}
-          {% endfor %}
+          {% endfor %} {% endcomment %}
         </ul>
       </div>
     </div>
@@ -1001,7 +998,7 @@
   <div class="map-clean"></div>
   <footer>
     <div class="container text-center">
-      <p>Copyright © ISTE-NITH 2024</p>
+      <p>Copyright © ISTE-NITH 2025</p>
       <p>{{template.copyright_para|safe}}</p>
     </div>
   </footer>
